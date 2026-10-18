@@ -178,10 +178,14 @@ h2.d { font-size: clamp(40px, 11vw, 50px); }
 
 /* offer */
 .pricebox { margin-top: 20px; border-radius: 20px; padding: 18px 16px 16px; scroll-margin-top: 16px; background: var(--paper); color: var(--ink); }
-.pricebox .top { display: block; }
-.pricebox .was { font-family: var(--mono); font-size: 13px; color: var(--ink-3); margin-top: 18px; }
-.pricebox .now { font-family: var(--display); font-size: 76px; line-height: .85; transform: skewX(-8deg); transform-origin: left; display: block; margin-top: 4px; letter-spacing: 4px; }
-.pricebox .tagp { display: inline-block; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; background: var(--green); color: #fff; padding: 8px 14px; border-radius: 100px; white-space: nowrap; box-shadow: 0 4px 16px rgba(15,169,104,.42); }
+.pricebox .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.pricebox .was { font-family: var(--mono); font-size: 20px; font-weight: 600; color: var(--ink-3); }
+.pricebox .now small { font-size: .55em; margin-right: 4px; }
+.inc b { font-weight: 700; }
+.sec-cta { margin-top: 32px; }
+.dark .sec-cta .shield-line { color: var(--green-hi); }
+.pricebox .now { font-family: var(--display); font-size: 72px; line-height: .85; transform: skewX(-8deg); display: inline-block; letter-spacing: 2px; }
+.pricebox .tagp { font-family: var(--mono); font-size: 12px; font-weight: 600; background: var(--green); color: #fff; padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
 .inc { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 7px; font-size: 15px; }
 .inc li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
 .inc li::before { content: "✓"; color: var(--green); font-weight: 700; }
@@ -197,6 +201,7 @@ h2.d { font-size: clamp(40px, 11vw, 50px); }
 .opt-box .amt { font-family: var(--mono); font-weight: 600; font-size: 15px; text-align: right; line-height: 1.2; } .opt-box .amt small { display: block; font-size: 11px; color: var(--ink-3); font-weight: 500; }
 .badge { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: #fff; border-radius: 5px; padding: 2px 6px; margin-left: 6px; vertical-align: 2px; }
 .agree { display: grid; grid-template-columns: 22px 1fr; gap: 10px; margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--amber-wash); font-size: 13.5px; line-height: 1.4; cursor: pointer; }
+.agree[hidden] { display: none; }
 .agree input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--green); }
 .secure { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
 .secure span { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 7px; }
@@ -249,6 +254,79 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
 .feed { margin-top: 24px; border-radius: 18px; overflow: hidden; background: #191B1F; box-shadow: 0 12px 34px rgba(13,13,15,.16); }
 .feed img { display: block; width: 100%; height: auto; }
 .feed-note { margin: 10px 0 0; font-size: 13px; color: var(--ink-3); text-align: center; }
+
+/* ================= DESKTOP (960px and up): full-width website ================= */
+@media (min-width: 960px) {
+  :root { --gut: max(56px, calc((100vw - 1240px) / 2)); }
+  html, body { background: var(--paper); }
+  body { padding-block: 0 !important; margin: 0; }
+  .page { max-width: none !important; border-radius: 0 !important; box-shadow: none !important; overflow: visible !important; padding-bottom: 0; }
+  .wrap, .logo, footer { padding-inline: var(--gut); }
+  .banner { padding: 12px var(--gut); } .banner .row1 { justify-content: center; gap: 28px; font-size: 12.5px; }
+  .logo { padding-top: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--line); padding-bottom: 20px; } .wordmark { font-size: 36px; } .logo small { font-size: 11px; }
+  .sec { padding-block: 100px; }
+  h2.d { font-size: 76px; }
+  .eyebrow { font-size: 12px; }
+  .copy { font-size: 19px; max-width: 680px; }
+
+  /* hero: headline on top, video below, all above the fold */
+  .hero { text-align: center; padding-block: 40px 90px; }
+  .hero h1.d { font-size: min(66px, calc((100vw - 2 * var(--gut)) / 20)); white-space: nowrap; max-width: none; margin: 0 auto; transform-origin: center bottom; }
+  .hero .sub { font-size: 21px; max-width: 900px; margin: 16px auto 0; }
+  .hero-slot { aspect-ratio: 16 / 9; width: min(100%, 1040px, calc((100vh - 370px) * 16 / 9)); min-width: 560px; margin: 28px auto 0; border-radius: 20px; box-shadow: 0 30px 80px rgba(13,13,15,.2); }
+  .hero .cta-block { max-width: 460px; margin: 32px auto 0; }
+  .hero .cta { min-height: 68px; font-size: 32px; }
+  .sound { bottom: 24px; padding: 12px 20px; font-size: 15px; }
+  .sec-cta { max-width: 480px; margin: 48px auto 0; }
+  .sec-cta .cta { min-height: 68px; font-size: 32px; }
+  .proof-left .sec-cta { margin: 36px 0 0; }
+  .proof-left .sec-cta .shield-line { justify-content: flex-start; }
+
+  /* examples: full grid */
+  .swipe { flex-wrap: wrap; justify-content: center; overflow: visible; gap: 16px; margin: 44px 0 0; padding: 0; scroll-snap-type: none; }
+  .swipe .slot.ex { width: calc((100% - 64px) / 5); border-radius: 18px; }
+  .swipe-hint { display: none; }
+
+  /* proof: stats left, comments right */
+  #proof { display: grid; grid-template-columns: minmax(0, 1fr) 500px; column-gap: 80px; align-items: start; }
+  .proof-left { position: sticky; top: 48px; }
+  #proof h2.d { font-size: 64px; }
+  #proof .feed { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
+  #proof .feed-note { grid-column: 2; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 40px; }
+  .stats div { padding: 24px 24px 18px; } .stats .num { font-size: 76px; } .stats span:last-child { font-size: 12px; }
+  .viral { font-size: 28px; margin-top: 32px; max-width: 600px; }
+
+  /* uses: 5 across */
+  .uses-list { grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 44px; }
+  .uses-list li { padding: 20px; font-size: 17px; }
+  .uses-more { font-size: 17px; margin-top: 22px; }
+
+  /* offer: pitch left, price box right */
+  #offer { display: grid; grid-template-columns: minmax(0, 1fr) 520px; grid-template-rows: auto auto auto 1fr; column-gap: 80px; align-items: start; }
+  #offer > .eyebrow { grid-column: 1; grid-row: 1; }
+  #offer > h2.d { grid-column: 1; grid-row: 2; font-size: clamp(88px, 7.5vw, 116px); }
+  #offer > .guarantee { grid-column: 1; grid-row: 3; margin-top: 44px; max-width: 600px; grid-template-columns: 96px 1fr; gap: 24px; }
+  #offer > .guarantee .seal { width: 96px; height: 96px; font-size: 17px; } #offer > .guarantee .seal b { font-size: 40px; }
+  #offer > .guarantee p { font-size: 17px; }
+  #offer > .pricebox { grid-column: 2; grid-row: 1 / span 4; margin-top: 0; padding: 30px 28px 26px; border-radius: 24px; }
+
+  /* faq: two columns of questions */
+  .faq { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; border-top: 0; margin-top: 36px; }
+  .faq details { border-top: 1px solid var(--line); border-bottom: 0; }
+  .faq summary { font-size: 18px; padding-block: 22px; } .faq details p { font-size: 16px; }
+  .dfy { text-align: left; font-size: 16px; margin-top: 36px; }
+
+  footer { padding-block: 44px 28px; }
+  footer .terms { max-width: 980px; }
+
+  /* sticky bar full width; downsell as a centered modal */
+  .sticky { left: 0; width: 100%; transform: translateY(110%); padding-inline: var(--gut); grid-template-columns: auto auto; justify-content: space-between; }
+  .sticky.on { transform: none; }
+  .sticky .cta { padding-inline: 32px; }
+  .ds { align-items: center; }
+  .ds .sheet { width: min(560px, 92vw); border-radius: 24px; }
+}
 </style>
 </head>
 <body>
@@ -256,7 +334,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
 
 <div class="page">
   <div class="banner">
-    <div class="row1"><span>Launch price <s>$1,499</s> <em>$497</em></span><span>first 100 buyers</span></div>
+    <div class="row1"><span>The Human Layer <s>$1,499</s> <em>Only $497</em></span><span>Instant access</span></div>
     <div id="spots" hidden><div class="meter" aria-hidden="true"><i id="meter-fill"></i></div><div class="meter-label" id="meter-label"></div></div>
   </div>
   <div class="logo"><a href="https://buildwithtrend.com" aria-label="TREND home" style="color:inherit;text-decoration:none;"><span class="wordmark">TREND<span>/</span></span></a><small>The Human Layer</small></div>
@@ -267,23 +345,22 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
     <p class="sub" id="sub">The click-by-click system plus a Claude co-pilot that writes every prompt for you. <b>No AI experience needed.</b></p>
 
     <figure class="slot hero-slot">
-      <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/00-hero-poster.jpg" data-src="media/00-hero.mp4"></video>
+      <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/00-hero-poster.jpg" data-src="media/00-hero.mp4" data-src-wide="media/00-hero-wide.mp4" data-poster-wide="media/00-hero-wide-poster.jpg"></video>
             <button class="sound" id="sound" type="button" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3z"/></svg><span>Tap to watch with sound</span></button>
     </figure>
 
     <div class="cta-block">
-      <a class="cta buy" href="#buy" id="hero-cta">Make my avatar — $497<small>instant access by email</small></a>
+      <a class="cta buy" href="#buy" id="hero-cta">Make my avatar — $497<small>Instant access</small></a>
       <p class="shield-line"><svg width="14" height="15" viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V4l8-3z" fill="#0FA968"/><path d="M6 11l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>TREND Money-Back Guarantee available<a href="#terms" class="ast" aria-label="See guarantee terms">*</a></p>
     </div>
   </section>
 
   <!-- 2. EXAMPLES -->
   <section class="sec wrap" id="examples">
-    <p class="eyebrow">See for yourself</p>
-    <h2 class="d">Endless examples. <span class="g">All AI.</span></h2>
-    <p class="copy">Every person below is AI, made with The Human Layer.</p>
+    <p class="eyebrow">Every person below is AI</p>
+    <h2 class="d">Never film again. <span class="g">Still look real.</span></h2>
+    <p class="copy">Hate being on camera? Burning hours on reshoots? Paying creators hundreds for one video? Every person below is an AI avatar made with The Human Layer. <b>Build yours in under an hour and post every day without ever hitting record.</b></p>
     <div class="swipe" aria-label="Examples, swipe for more">
-      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-01.jpg" data-src="media/ex-01.mp4" class="lazy-vid" aria-label="Talking head, made with The Human Layer"></video><span class="label">Talking head</span></figure>
       <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-02.jpg" data-src="media/ex-02.mp4" class="lazy-vid" aria-label="Product review, made with The Human Layer"></video><span class="label">Product review</span></figure>
       <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-03.jpg" data-src="media/ex-03.mp4" class="lazy-vid" aria-label="Fashion, made with The Human Layer"></video><span class="label">Fashion</span></figure>
       <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-04.jpg" data-src="media/ex-04.mp4" class="lazy-vid" aria-label="YouTube lesson, made with The Human Layer"></video><span class="label">YouTube lesson</span></figure>
@@ -296,12 +373,17 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
       <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-11.jpg" data-src="media/ex-11.mp4" class="lazy-vid" aria-label="Beauty tutorial, made with The Human Layer"></video><span class="label">Beauty tutorial</span></figure>
     </div>
     <p class="swipe-hint">Swipe →</p>
+    <div class="cta-block sec-cta">
+      <a class="cta buy" href="#buy">Make my avatar — $497<small>Instant access</small></a>
+      <p class="shield-line"><svg width="14" height="15" viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V4l8-3z" fill="#0FA968"/><path d="M6 11l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>TREND Money-Back Guarantee available<a href="#terms" class="ast" aria-label="See guarantee terms">*</a></p>
+    </div>
   </section>
 
   <!-- 2. PROOF -->
   <section class="sec wrap" id="proof">
-    <p class="eyebrow">Our first avatar's first post</p>
-    <h2 class="d">Maya went viral <span class="g">overnight.</span></h2>
+    <div class="proof-left">
+    <p class="eyebrow">Case study: what's possible</p>
+    <h2 class="d">We created Maya in one night. <span class="g">She went viral in under 24 hours.</span></h2>
 
     <div class="stats" aria-label="Maya's first post">
       <div><span class="num">60K+</span><span>views</span></div>
@@ -309,50 +391,36 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
       <div><span class="num">1,000+</span><span>shares</span></div>
       <div><span class="num">1,000+</span><span>DMs</span></div>
     </div>
-    <p class="viral">We turned Maya into an overnight sensation, and everyone was asking <b>HOW</b> to do it.</p>
+    <p class="viral">We turned Maya into an overnight sensation, and <b>we'll teach you exactly how to do the same.</b></p>
+      <div class="cta-block sec-cta">
+        <a class="cta buy" href="#buy">Make my avatar — $497<small>Instant access</small></a>
+        <p class="shield-line"><svg width="14" height="15" viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V4l8-3z" fill="#0FA968"/><path d="M6 11l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>TREND Money-Back Guarantee available<a href="#terms" class="ast" aria-label="See guarantee terms">*</a></p>
+      </div>
+    </div>
     <div class="feed"><img src="media/06-comments.jpg" width="920" height="1725" alt="Real Instagram comments on Maya's post: people asking if she's real, how it was made, and how to buy it" loading="lazy"></div>
     <p class="feed-note">Real comments from Maya's first post. Plus 1,000+ more.</p>
   </section>
 
-  <!-- 3. USES -->
-  <section class="sec dark wrap" id="uses">
-    <p class="eyebrow">One avatar. Endless uses.</p>
-    <h2 class="d">Use your avatar <span class="g">for:</span></h2>
-    <ul class="uses-list">
-      <li>Talking-head videos</li>
-      <li>An AI twin of you</li>
-      <li>UGC ads</li>
-      <li>Product shots</li>
-      <li>Podcast clips</li>
-      <li>YouTube and course videos</li>
-      <li>Fashion and model shoots</li>
-      <li>Your brand's spokesperson</li>
-      <li>Real estate tours</li>
-      <li>Selling avatars to clients</li>
-    </ul>
-    <p class="uses-more">And anything else you'd normally need a camera for.</p>
-  </section>
 
   <!-- 5. OFFER -->
   <section class="sec dark wrap" id="offer">
     <p class="eyebrow">The whole system</p>
-    <h2 class="d">Everything you need. <span class="g">$497.</span></h2>
+    <h2 class="d">Everything you need. <span class="g">Only $497.</span></h2>
 
     <div class="pricebox" id="buy">
-      <div class="top">
-        <span class="tagp">&#9733; Launch price &middot; first 100 buyers</span>
-        <div class="was"><s>$1,499</s> after the first 100</div>
-        <span class="now" id="now">$497</span>
-      </div>
+      <div class="top"><div><div class="was"><s>$1,499</s></div><span class="now" id="now"><small>Only</small> $497</span></div></div>
       <ul class="inc">
-        <li>The step-by-step system, click by click</li>
-        <li>Claude co-pilot that writes your prompts and scripts</li>
-        <li>6 ready-made avatars to start with</li>
-        <li>50 ways to use your avatar, from content to client work</li>
-        <li>Free updates when the tools change</li>
+        <li><span><b>Your character reference sheet,</b> the exact method behind Maya</span></li>
+        <li><span><b>Your perfect master headshot</b> that looks like a real photo</span></li>
+        <li><span><b>A voice that sounds human,</b> not robotic</span></li>
+        <li><span><b>Scene building</b> so your avatar can be anywhere</span></li>
+        <li><span><b>The Claude Co-Pilot</b> that writes every prompt for you</span></li>
+        <li><span><b>Click-by-click steps.</b> No AI experience needed</span></li>
+        <li><span><b>6 ready-made avatars</b> to start with today</span></li>
+        <li><span><b>50 ways to use your avatar,</b> from content to client work</span></li>
+        <li><span><b>Free updates</b> when the tools change</span></li>
       </ul>
-      <p class="payline"><b>One payment of $497.</b> TREND Money‑Back Guarantee available.*</p>
-      <div class="cta-block" style="margin-top:14px"><a class="cta" href="#buy" id="buy-cta">Make my avatar — $497</a><p class="under" id="buy-note"></p></div>
+      <div class="cta-block" style="margin-top:18px"><a class="cta" href="#buy" id="buy-cta">Make my avatar — $497</a><p class="under" id="buy-note"></p></div>
       <div class="secure"><span>Secure checkout by Stripe</span><span>Instant access by email</span></div>
     </div>
 
@@ -372,12 +440,11 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
       <details><summary>What do I get after I pay?</summary><p>Instant access by email, usually within a minute: the full system, the Claude co-pilot and the six ready-made avatars.</p></details>
       <details><summary>Can I make an avatar of me, or a client?</summary><p>Yes. Get written permission from anyone who isn't you. There's a full chapter on real people.</p></details>
       <details><summary>Do I have to label it as AI?</summary><p>Yes, and the guide shows you how. Label it, and never present an avatar as a real customer.</p></details>
-      <details><summary>What if it doesn't work for me?</summary><p>Email hello@buildwithtrend.com within 30 days. We'll set up a Zoom call, troubleshoot it with you and make it right. If it doesn't work because of an error in our system or something we failed to deliver, you get your money back. One-payment purchases, terms below.</p></details>
+      <details><summary>What if it doesn't work for me?</summary><p>Email hello@buildwithtrend.com within 30 days. We'll set up a Zoom call, troubleshoot it with you and make it right. If it doesn't work because of an error in our system or something we failed to deliver, you get your money back. Terms below.</p></details>
     </div>
     <p class="dfy">Rather have us build it for you? <a id="link-dfy" href="#work-with-us">Talk to us about done-for-you</a></p>
   </section>
 
-  <!-- 8. WORK WITH US — lead capture (Web3Forms, same as main site) -->
   <section class="sec wrap" id="work-with-us">
     <style>
       #work-with-us .lead-form { display:grid; gap:10px; margin-top:20px; }
@@ -418,7 +485,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
   </footer>
 </div>
 
-<div class="sticky" id="sticky" aria-hidden="true"><div class="p"><b>$497</b><span id="sticky-sub">instant access by email</span></div><a class="cta buy" href="#buy" tabindex="-1">Make my avatar</a></div>
+<div class="sticky" id="sticky" aria-hidden="true"><div class="p"><b>$497</b><span id="sticky-sub">Instant access</span></div><a class="cta buy" href="#buy" tabindex="-1">Make my avatar</a></div>
 
 <div class="ds" id="ds" hidden role="dialog" aria-modal="true" aria-labelledby="ds-title">
   <div class="sheet">
@@ -439,10 +506,8 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
 <script>
 /* ================= CONFIG — fill in before launch ================= */
 var CONFIG = {
-  CHECKOUT: {
-    full:  'https://checkout.mailerlite.com/checkout/36263'       // $497 one-time (MailerLite)
-  },
-  DONE_FOR_YOU: '#work-with-us',                 // scrolls to the on-page lead form (or set an external IG DM / booking link)
+  CHECKOUT: { full: 'https://checkout.mailerlite.com/checkout/36263' },   // $497 one-time (MailerLite)
+  DONE_FOR_YOU: '#work-with-us',                 // scrolls to the on-page lead form
   SPOTS: { claimed: null, total: 100 },          // real sales count; null hides the meter
   DOWNSELL: 'https://checkout.mailerlite.com/checkout/36831',   // $47 Starter (MailerLite); shows to people who back out of checkout
   /* Ad angles: link an ad to buildwithtrend.com/ai/?for=ugc to swap the headline */
@@ -486,6 +551,7 @@ var CONFIG = {
     v.src = v.dataset.src;
   }
   var hero = $('hero-video');
+  if (window.matchMedia && matchMedia('(min-width: 960px)').matches && hero.dataset.srcWide) { hero.dataset.src = hero.dataset.srcWide; hero.poster = hero.dataset.posterWide; }
   loadVideo(hero);
 
   /* Example clips: load only when scrolled near */
@@ -516,15 +582,15 @@ var CONFIG = {
   if (typeof c.claimed === 'number' && c.claimed >= 0) {
     $('spots').hidden = false; $('meter-label').textContent = c.claimed + ' of ' + c.total + ' claimed';
     requestAnimationFrame(function () { $('meter-fill').style.width = Math.min(c.claimed / c.total * 100, 100) + '%'; });
-    $('sticky-sub').textContent = Math.max(c.total - c.claimed, 0) + ' launch spots left';
+    $('sticky-sub').textContent = Math.max(c.total - c.claimed, 0) + ' spots left at $497';
   }
 
 
-  /* Payment — single one-time price ($497) */
+  /* Payment */
   var shield = '<svg width="12" height="13" viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V4l8-3z" fill="#0FA968"/></svg>';
-  var btn = $('buy-cta');
-  btn.href = CONFIG.CHECKOUT.full || '#buy';
+  var current = 'full', btn = $('buy-cta');
   $('buy-note').innerHTML = shield + 'TREND Money-Back Guarantee available*';
+  btn.href = CONFIG.CHECKOUT.full || '#buy';
   btn.addEventListener('click', function (e) {
     if (!CONFIG.CHECKOUT.full) { e.preventDefault(); var old = btn.textContent; btn.textContent = 'Checkout link goes here'; setTimeout(function () { btn.textContent = old; }, 1400); }
   });
@@ -533,7 +599,7 @@ var CONFIG = {
   var sticky = $('sticky'), heroVisible = true, buyVisible = false;
   function updateSticky() { var on = !heroVisible && !buyVisible; sticky.classList.toggle('on', on); sticky.setAttribute('aria-hidden', on ? 'false' : 'true'); sticky.querySelector('a').tabIndex = on ? 0 : -1; }
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; updateSticky(); }).observe($('hero-cta'));
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; updateSticky(); }).observe($('top'));
     new IntersectionObserver(function (e) { buyVisible = e[0].isIntersecting; updateSticky(); }, { threshold: 0.15 }).observe($('buy'));
   }
   /* $37 downsell: shows once to people who went to Stripe checkout and came back without buying.
@@ -558,7 +624,7 @@ var CONFIG = {
     ds.addEventListener('click', function (e) { if (e.target === ds) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ds.hidden) close(); });
     /* remember that they went to checkout */
-    $('buy-cta').addEventListener('click', function () { if (CONFIG.CHECKOUT.full) store('thl_co', '1'); });
+    $('buy-cta').addEventListener('click', function () { if (CONFIG.CHECKOUT[current] && $('buy-cta').getAttribute('aria-disabled') !== 'true') store('thl_co', '1'); });
     /* came back: cancel URL, a fresh load, or the back button restoring the page */
     var q = new URLSearchParams(location.search);
     if (q.get('checkout') === 'cancel') {
@@ -607,6 +673,5 @@ var CONFIG = {
   });
 })();
 </script>
-
 </body>
 </html>
