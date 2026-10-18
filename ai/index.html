@@ -1,715 +1,533 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta name="facebook-domain-verification" content="w66t7hq989ywhu02Oufr7gfrlll5va" />
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Human Layer — TREND /</title>
-<meta name="description" content="The Human Layer: the step-by-step guide for AI avatars that look, move and sound real. The exact tools, prompts, voice settings and second-by-second timing we use, plus a Claude co-pilot. One-time purchase.">
-<meta property="og:title" content="The Human Layer — TREND /">
-<meta property="og:description" content="The step-by-step guide for AI avatars that look, move and sound real. Tools, prompts, voice settings, timing and a Claude co-pilot. One-time purchase.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://buildwithtrend.com/ai">
-<meta property="og:image" content="https://buildwithtrend.com/og-image.png">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:url" content="https://buildwithtrend.com/ai/">
+<meta property="og:title" content="The Human Layer">
+<meta property="og:description" content="Make the best AI avatar on the market in under an hour. No AI experience needed.">
+<meta property="og:image" content="https://buildwithtrend.com/ai/media/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1089317664017447');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1089317664017447&ev=PageView&noscript=1"/></noscript>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2X7MDF9WV9"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2X7MDF9WV9');
+</script>
+<title>The Human Layer</title>
+<meta name="description" content="Make the best AI avatar on the market in under an hour. No AI experience needed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-<!-- ============================================================
-     EDIT THESE ONCE. Everything on the page reads from here.
-     ============================================================ -->
-<script>
-const CONFIG = {
-  productName: "The Human Layer",
-  brand: "TREND",
-  price: "$497",
-  anchorPrice: "$1,499",                 // "" hides the strike-through
-  checkoutUrl: "https://checkout.mailerlite.com/checkout/36263",
-  secondImage: "hero/02.jpg",          // image for the "still not convinced" section
-  secondText: "",   // "" keeps the on-video headline in the HTML; set text to override
-  secondSub: "",
-  supportEmail: "hello@buildwithtrend.com",
-  metaPixelId: "1089317664017447"     // TREND pixel for buildwithtrend.com. "" = off
-};
-</script>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-:root{
-  --white:#FFFFFF;--ink:#0D0D0F;--ink2:#141417;--ink3:#1B1B1F;--slate:#F5F5F7;--slate2:#FAFAFB;
-  --green:#0FA968;--green-d:#0C8E57;--green-l:#37D48F;--green-t:rgba(15,169,104,.10);
-  --gray:#6E6E73;--gray2:#86868B;--hair:#E6E6EA;--dhair:rgba(255,255,255,.13);--dgray:#A2A2A9;
-  --disp:'Bebas Neue','Arial Narrow',sans-serif;
-  --body:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,Helvetica,Arial,sans-serif;
-  --mono:ui-monospace,'SF Mono','IBM Plex Mono',Menlo,monospace;
-  --max:1120px;--r:16px;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+/* Layout: one phone column (max 460px), centered on desktop. Six short sections, one button repeated. TREND brand: white field, ink type, green only where the eye must land. */
+:root {
+  --paper: #FFFFFF; --slate: #F2F2F4; --ink: #0D0D0F; --ink-2: #4A4A52; --ink-3: #85858F; --line: #E3E3E8;
+  --green: #0FA968; --green-ink: #0B7F4E; --green-hi: #5FD39C; --green-wash: #E7F6EF; --amber-wash: #FFF4DE; --red: #C2410C;
+  --ink-soft: #1B1B20;
+  --display: "Bebas Neue", "Oswald", Impact, "Arial Narrow", sans-serif;
+  --body: -apple-system, "SF Pro Text", Inter, system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --col: 460px; color-scheme: light;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;font-family:var(--body);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.55;font-size:17px;overflow-x:clip}
-::selection{background:var(--green);color:#fff}
-img,video,iframe{max-width:100%}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-section{padding:96px 0;position:relative}
-.divider{border-top:1px solid var(--hair)}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);margin:0 0 12px}
-h1{font-family:var(--disp);font-weight:400;transform:skewX(-8deg);font-size:clamp(38px,5vw,62px);line-height:.92;letter-spacing:.01em;margin:0 0 12px}
-h2{font-family:var(--disp);font-weight:400;transform:skewX(-8deg);transform-origin:left;font-size:clamp(40px,5.6vw,72px);line-height:.92;margin:0 0 16px}
-.center h2{transform-origin:center}
-h3{font-size:19px;line-height:1.25;font-weight:700;margin:0 0 8px}
-.g{color:var(--green)}
-.lead{font-size:clamp(17px,1.6vw,20px);color:var(--gray);max-width:720px;margin:0 0 28px}
-.lead b{color:var(--ink);font-weight:600}
-.sub{font-size:clamp(16px,1.5vw,18px);color:var(--gray);max-width:680px;margin:0 auto 16px}
-.sub b{color:var(--ink);font-weight:600}
-.center{text-align:center}.center .lead,.center .eyebrow{margin-left:auto;margin-right:auto}
-.btn{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;text-decoration:none;font-weight:600;border-radius:100px;padding:15px 28px;font-size:15px;font-family:var(--body);transition:transform .15s,background .2s,box-shadow .2s}
-.btn .arw{display:inline-block;transition:transform .2s}.btn:hover .arw{transform:translateX(4px)}
-.btn-p{background:var(--green);color:#fff}
-.btn-p:hover{background:var(--green-d);box-shadow:0 10px 34px -10px rgba(15,169,104,.7)}
-.btn-lg{padding:18px 34px;font-size:17px}
-.btn-ghost{background:transparent;color:#fff;border:1px solid var(--dhair)}
-.btn-ghost:hover{border-color:var(--green-l);color:var(--green-l)}
-.note{display:block;margin-top:12px;font-size:14px;color:var(--gray2)}
-.cta-stack{display:flex;flex-direction:column;align-items:center}
-.sec-cta{display:flex;align-items:center;gap:18px;margin-top:44px;flex-wrap:wrap}
-.sec-cta-note{font-size:14px;color:var(--gray)}
-.sec-cta-note.big{font-size:18px;line-height:1.5}
-.sec-cta-note.big s{color:var(--gray2)}
+* { box-sizing: border-box; }
+html { background: var(--slate); scroll-behavior: smooth; }
+body { background: var(--slate); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+img, video { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.page { max-width: var(--col); margin: 0 auto; background: var(--paper); padding-bottom: 96px; }
+@media (min-width: 720px) { body { padding-block: 28px; } .page { border-radius: 28px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 30px 80px rgba(13,13,15,.10); } }
+.wrap { padding-inline: 16px; }
+.sec { padding-block: 48px; border-top: 1px solid var(--line); }
+.hero { padding-block: 14px 40px; }
+.dark { background: var(--ink); color: #fff; border-top: 0; }
+.dark + .sec { border-top: 0; }
 
+/* type */
+.d { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: .005em; margin: 0; transform: skewX(-8deg); transform-origin: left bottom; text-wrap: balance; }
+h1.d { font-size: clamp(54px, 15.5vw, 74px); }
+h2.d { font-size: clamp(40px, 11vw, 50px); }
+.d .g { color: var(--green); }
+.dark .d .g { color: var(--green-hi); }
+.eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+.dark .eyebrow { color: rgba(255,255,255,.55); }
+.sub { font-size: 19px; font-weight: 600; line-height: 1.3; margin: 14px 0 0; color: var(--ink-2); text-wrap: balance; }
+.sub b { color: var(--ink); }
+.copy { font-size: 17px; color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.copy b { color: var(--ink); }
+.dark .copy { color: rgba(255,255,255,.78); }
+.dark .copy b { color: #fff; }
 
-/* nav */
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:90;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--hair)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:80px;padding:0 32px;max-width:1400px;margin:0 auto;gap:24px}
-.nav-logo img{height:54px;width:auto;display:block}
-.nav-cta{font-size:14px;padding:12px 22px;white-space:nowrap;gap:8px}
-.nav-cta s{opacity:.6;font-weight:500}
-.nav-cta b{font-weight:700}
-.timer{display:flex;flex-direction:column;align-items:center;gap:5px;padding:0;background:transparent;color:var(--ink);flex:1}
-.t-row{display:flex;align-items:stretch;gap:14px}
-.t-title{font-family:var(--disp);font-weight:400;font-size:44px;line-height:.9;letter-spacing:.004em;color:var(--green);transform:skewX(-8deg);transform-origin:left;white-space:nowrap;display:flex;align-items:center;padding-right:8px}
-.t-clock{display:flex;gap:6px}
-.t-clock .u{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:52px;height:44px;padding:0 8px;border-radius:9px;background:var(--ink);color:#fff;line-height:1}
-.t-clock .u b{font-family:var(--disp);font-weight:400;font-size:26px;letter-spacing:.04em}
-.t-clock .u i{font-style:normal;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dgray);margin-top:2px}
-.t-sub{font-size:14px;color:var(--gray);line-height:1.2}
-.t-sub s{color:var(--gray2)}
-.t-sub b{color:var(--ink);font-weight:600}
-@media(max-width:1250px){.t-title{font-size:26px}.t-clock .u{min-width:50px}.t-clock .u b{font-size:28px}.t-sub{font-size:11px}}
-@media(max-width:1050px){.nav-in{gap:14px}.t-title{font-size:22px}.t-clock{gap:5px}.t-clock .u{min-width:42px;padding:4px 6px}.t-clock .u b{font-size:22px}.t-clock .u i{font-size:7px}.t-sub{display:none}.nav-cta{font-size:13px;padding:10px 16px}.nav-logo img{height:46px}}
-@media(max-width:900px){.t-title{display:none}.t-sub{display:none}.timer{gap:0}.t-clock .u{min-width:44px;padding:5px}.t-clock .u b{font-size:22px}}
-@media(max-width:560px){.timer{display:none}}
+/* banner + logo */
+.banner { background: var(--ink); color: #fff; padding: 9px 14px 10px; }
+.banner .row1 { display: flex; justify-content: space-between; gap: 10px; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.banner s { opacity: .5; } .banner em { font-style: normal; color: var(--green-hi); }
+.meter { margin-top: 7px; height: 5px; border-radius: 5px; background: rgba(255,255,255,.18); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; background: var(--green); transition: width .8s ease; }
+.meter-label { font-family: var(--mono); font-size: 10.5px; color: rgba(255,255,255,.7); margin-top: 5px; }
+.logo { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 4px; text-decoration: none; }
+.wordmark { font-family: var(--display); font-size: 28px; line-height: 1; transform: skewX(-8deg); display: inline-block; letter-spacing: .02em; }
+.wordmark span { color: var(--green); margin-left: 2px; }
+.logo small { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
 
-/* hero: Maya full-spread video (site pattern) */
-.mayahero{position:relative;width:100%;background:#fff;line-height:0;overflow:hidden;aspect-ratio:21/9}
-.mayahero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.mayahero .mh-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .9s ease;z-index:2;pointer-events:none;will-change:opacity}
-.mayahero .mh-still.show{opacity:1}
-.mayahero .mh-copy{position:absolute;left:8%;top:50%;transform:translateY(-50%);text-align:left;z-index:4;opacity:0;transition:opacity 1.1s ease;pointer-events:none;line-height:1;max-width:58%;will-change:opacity}
-.mayahero .mh-copy.show{opacity:1;pointer-events:auto}
-.mayahero .mh-copy .eyebrow{margin-bottom:14px;line-height:1.3}
-.mayahero .mh-copy h1{font-size:clamp(44px,6.4vw,112px);line-height:.92;letter-spacing:.004em;transform:skewX(-8deg);transform-origin:left;color:var(--ink);margin:0 0 18px}
-.mayahero .mh-copy .mh-sub{font-size:clamp(16px,1.6vw,22px);color:var(--gray);line-height:1.35;max-width:30ch;margin:0 0 20px}
-.mayahero .mh-copy .mh-sub b{color:var(--ink);font-weight:600}
-.mayahero .mh-copy .note{display:block;line-height:1.4;margin-top:10px}
-.mh-controls{position:absolute;bottom:22px;left:0;right:0;display:flex;gap:12px;justify-content:center;z-index:5}
-.mh-ctrl{width:42px;height:42px;border-radius:50%;border:none;background:rgba(60,60,67,.14);color:#3a3a3c;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s;line-height:0}
-.mh-ctrl:hover{background:rgba(60,60,67,.24);color:#1d1d1f}
-.fold{min-height:100vh;display:flex;flex-direction:column}
-@media(max-width:1050px){.fold{min-height:0}.mayahero{height:auto;aspect-ratio:16/9}}
-.fold header.nav{flex:0 0 auto}
-.fold .mayahero{flex:0 0 auto}
-.stats{background:var(--ink);color:#fff;flex:1 1 auto;display:flex;align-items:center}
-@media(max-width:900px){.fold{min-height:0}}
-.stats-in{display:grid;grid-template-columns:repeat(4,1fr);gap:0;width:100%;max-width:1560px;margin:0 auto;padding:0 20px}
-.stat{padding:22px 24px;border-left:1px solid var(--dhair);display:flex;flex-direction:row;align-items:center;gap:18px}
-.stat>div{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
-.stat:first-child{border-left:0}
-.stat b{font-family:var(--disp);font-weight:400;font-size:72px;line-height:.85;color:var(--green-l);transform:skewX(-8deg);transform-origin:left;flex:0 0 auto;margin:0;letter-spacing:-.01em}
-.stat em{display:block;font-style:normal;font-family:var(--disp);font-size:22px;line-height:1;letter-spacing:.06em;color:#fff;transform:skewX(-8deg);transform-origin:left;margin:0 0 6px;white-space:nowrap}
-.stat span{display:block;font-size:13.5px;line-height:1.4;color:var(--dgray)}
-@media(max-width:1250px){.stat b{font-size:54px}.stat em{font-size:19px}.stat span{font-size:12px}.stat{padding:16px 14px;gap:12px}}
-@media(max-width:1050px){.stats{min-height:0}.stats-in{grid-template-columns:1fr 1fr}.stat{border-left:0;border-top:1px solid var(--dhair);padding:22px 24px;gap:18px}.stat:nth-child(odd){border-right:1px solid var(--dhair)}.stat:nth-child(-n+2){border-top:0}.stat b{font-size:64px}.stat em{font-size:22px}.stat span{font-size:14px}}
-@media(max-width:900px){.stats{min-height:0}.stats-in{grid-template-columns:1fr 1fr}.stat{border-left:0;border-top:1px solid var(--dhair);padding:18px 14px}.stat:nth-child(odd){border-right:1px solid var(--dhair)}.stat:nth-child(-n+2){border-top:0}.stat b{font-size:44px;min-width:64px}}
-@media(max-width:520px){.stats-in{grid-template-columns:1fr}.stat{border-right:0!important;border-top:1px solid var(--dhair)}.stat:first-child{border-top:0}}
-@media(max-width:833px){#top.mayahero{aspect-ratio:3/4;background:#ece9e6}.fold{min-height:0}#top.mayahero video,#top.mayahero .mh-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% center;display:block}#top.mayahero .mh-copy{position:absolute;opacity:1 !important;left:6%;right:6%;max-width:none;top:auto;bottom:12%;transform:none;color:#fff;z-index:4}#top.mayahero .mh-copy h1{font-size:30px;line-height:1.04;color:#fff;margin:0 0 12px}#top.mayahero .mh-copy .mh-sub{font-size:14px;line-height:1.4;max-width:34ch;color:#f0f0f0;margin:0 0 14px}#top.mayahero .mh-copy .eyebrow{font-size:11px;letter-spacing:.14em;margin-bottom:10px;color:#fff}#top.mayahero .mh-copy .btn-lg{font-size:14px;padding:13px 22px;width:auto;display:inline-flex}#top.mayahero .mh-copy .note{font-size:11px;color:#ddd;margin-top:8px}#top.mayahero .mh-copy::before{content:"";position:absolute;left:-6%;right:-6%;bottom:-120%;top:-10%;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.35),transparent);z-index:-1}#top .mh-controls{bottom:10px}}
+/* buttons */
+.cta { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; min-height: 62px; border: 0; border-radius: 14px; background: var(--green); color: #fff; font-family: var(--display); font-size: 28px; letter-spacing: .05em; cursor: pointer; text-decoration: none; padding: 8px 16px; transition: transform .12s, background .12s; line-height: 1; text-align: center; }
+.cta small { font-family: var(--body); font-size: 12px; letter-spacing: 0; font-weight: 500; opacity: .92; margin-top: 5px; }
+.cta:hover { background: var(--green-ink); } .cta:active { transform: scale(.985); }
+.cta[aria-disabled="true"] { background: #9BCFB6; cursor: not-allowed; }
+.cta-block { display: grid; gap: 10px; margin-top: 24px; }
+.shield-line { display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: var(--green-ink); margin: 0; text-align: center; }
+.dark .shield-line { color: var(--green-hi); }
+.under { text-align: center; font-size: 13px; color: var(--ink-2); margin: 0; display: flex; gap: 6px; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+/* ===== media slots: your file covers the brief once it exists ===== */
+.slot { position: relative; overflow: hidden; border-radius: 16px; isolation: isolate; max-width: 100%; margin: 0;
+  background: repeating-linear-gradient(135deg, var(--slate) 0 10px, #EBEBEF 10px 20px); border: 1.5px dashed #C9C9D1; }
+.dark .slot { background: repeating-linear-gradient(135deg, var(--ink-soft) 0 10px, #222228 10px 20px); border-color: #3A3A44; }
+.slot > img, .slot > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.slot.has-media { border: 0; }
+.brief { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 12px; color: var(--ink-2); }
+.dark .brief { color: rgba(255,255,255,.7); }
+.brief .id { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .06em; background: var(--ink); color: #fff; border-radius: 5px; padding: 3px 6px; }
+.dark .brief .id { background: var(--green); }
+.brief .ratio { position: absolute; top: 10px; right: 10px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--ink-3); }
+.brief b { font-size: 14px; line-height: 1.25; color: var(--ink); }
+.dark .brief b { color: #fff; }
+.brief span { font-size: 12px; line-height: 1.35; }
+.brief code { font-family: var(--mono); font-size: 10.5px; color: var(--green-ink); margin-top: 2px; word-break: break-all; }
+.dark .brief code { color: var(--green-hi); }
+.label { position: absolute; z-index: 3; left: 8px; bottom: 8px; font-size: 12.5px; font-weight: 700; background: rgba(255,255,255,.94); color: var(--ink); padding: 5px 8px; border-radius: 8px; }
+.slot:not(.has-media) .label { display: none; }
+
+/* hero */
+.hero-slot { aspect-ratio: 4 / 5; margin-top: 20px; }
+.sound { position: absolute; z-index: 4; left: 50%; bottom: 16px; transform: translateX(-50%); display: none; align-items: center; gap: 8px; border: 0; background: rgba(13,13,15,.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; padding: 10px 16px; border-radius: 999px; font: 600 14px var(--body); cursor: pointer; }
+.has-media .sound { display: inline-flex; }
+
+/* proof */
+.spot { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+.spot button { padding: 0; border: 3px solid transparent; border-radius: 19px; background: none; cursor: pointer; position: relative; display: block; text-align: left; font: inherit; color: inherit; }
+.spot .slot { aspect-ratio: 3 / 4; }
+.spot .pick { position: absolute; z-index: 5; left: 50%; bottom: 12px; transform: translateX(-50%); background: #fff; color: var(--ink); font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,.2); }
+.spot.done button { border-color: var(--green); } .spot.done .pick { background: var(--green); color: #fff; }
+.spot .brief { padding-bottom: 52px; }
+.reveal { margin-top: 14px; border-radius: 16px; background: var(--ink); color: #fff; padding: 18px 16px; }
+.reveal:not([hidden]) { animation: pop .3s ease; }
+@keyframes pop { from { transform: scale(.96); opacity: 0; } to { transform: none; opacity: 1; } }
+.reveal .d { font-size: 38px; } .reveal p { margin: 8px 0 0; color: rgba(255,255,255,.75); font-size: 15px; }
+.bignum { display: flex; align-items: baseline; gap: 12px; margin-top: 28px; }
+.bignum .num { font-family: var(--display); font-size: 72px; line-height: .85; transform: skewX(-8deg); display: inline-block; color: var(--green); }
+.bignum p { margin: 0; font-size: 15px; color: var(--ink-2); line-height: 1.35; }
+.bignum p b { color: var(--ink); }
+.swipe { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 16px 10px; margin: 18px -16px 0; scrollbar-width: none; overscroll-behavior-x: contain; }
+.swipe::-webkit-scrollbar { display: none; }
+.swipe > * { scroll-snap-align: start; scroll-margin-left: 16px; flex: none; }
+.swipe .slot.comment { width: 72%; aspect-ratio: 1 / 1; }
+.swipe .slot.comment > img { object-fit: contain; background: #fff; }
+.swipe .slot.use { width: 58%; aspect-ratio: 4 / 5; }
+.swipe-hint { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; margin: 6px 0 0; text-align: right; }
+.dark .swipe-hint { color: rgba(255,255,255,.5); }
+
+/* proof stats */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 28px; }
+.stats div { background: var(--slate); border-radius: 14px; padding: 14px 14px 12px; }
+.stats .num { display: block; font-family: var(--display); font-size: 46px; line-height: .9; color: var(--green); transform: skewX(-8deg); transform-origin: left; font-variant-numeric: tabular-nums; }
+.stats span:last-child { display: block; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin-top: 4px; }
+.viral { margin: 18px 0 0; font-size: 19px; font-weight: 700; line-height: 1.3; text-wrap: balance; }
+.viral b { color: var(--green-ink); }
+.ast { color: inherit; text-decoration: none; font-weight: 700; margin-left: 1px; }
+
+/* uses */
+.uses-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.uses-list li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start; background: var(--ink-soft); border-radius: 12px; padding: 12px; font-size: 15px; font-weight: 600; line-height: 1.25; color: #fff; }
+.uses-list li::before { content: "✓"; color: var(--green-hi); font-weight: 700; }
+.uses-more { margin: 16px 0 0; font-size: 15px; color: rgba(255,255,255,.7); }
+
+/* examples */
+.swipe .slot.ex { width: 56%; aspect-ratio: 9 / 16; }
+
+/* who we are */
+.who { display: grid; grid-template-columns: 84px 1fr; gap: 14px; align-items: center; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.who .slot { aspect-ratio: 1; border-radius: 50%; }
+.who .slot .brief { align-items: center; justify-content: center; text-align: center; padding: 6px; }
+.who .slot .brief .id, .who .slot .brief .ratio { display: none; }
+.who .slot .brief b { font-size: 11px; }
+.who .slot .brief code { font-size: 9px; }
+.who p { margin: 0; font-size: 15px; line-height: 1.4; color: rgba(255,255,255,.78); }
+.who p b { display: block; color: #fff; font-size: 16px; margin-bottom: 2px; }
+
+/* easy */
+.phone-frame { margin: 22px auto 0; width: 60%; border-radius: 30px; padding: 8px; background: #2A2A31; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.phone-frame .slot { aspect-ratio: 9 / 16; border-radius: 24px; background: repeating-linear-gradient(135deg, var(--ink-soft) 0 10px, #222228 10px 20px); border-color: #3A3A44; }
+.phone-frame .brief { color: rgba(255,255,255,.7); }
+.phone-frame .brief b { color: #fff; } .phone-frame .brief code { color: var(--green-hi); } .phone-frame .brief .id { background: var(--green); }
+.steps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: baseline; counter-increment: s; font-size: 16px; color: var(--ink-2); }
+.steps li::before { content: counter(s); font-family: var(--display); font-size: 36px; line-height: .8; color: var(--green); transform: skewX(-8deg); }
+.steps b { color: var(--ink); }
 
 /* offer */
-.offer{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
-.card{background:var(--white);border:1.5px solid var(--hair);border-radius:20px;padding:32px}
-.card.hi{border-color:var(--ink);box-shadow:0 24px 70px -30px rgba(13,13,15,.35)}
-.pname{font-family:var(--disp);font-weight:400;font-size:38px;line-height:.95;transform:skewX(-8deg);transform-origin:left;margin:0 0 14px}
-.price{display:flex;align-items:baseline;gap:14px;margin:8px 0 6px}
-.price .now{font-family:var(--disp);font-size:80px;line-height:.85;letter-spacing:.01em}
-.price .was{font-family:var(--disp);font-size:42px;color:var(--gray2);text-decoration:line-through;text-decoration-color:#E0245E;text-decoration-thickness:4px;line-height:.9}
-.price-note{font-size:14px;color:var(--gray2);margin:0 0 20px}
-.inc{list-style:none;margin:0;padding:0}
-.inc li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--hair);font-size:16px}
-.inc li:first-child{border-top:0}
-.inc .ck{flex:0 0 22px;height:22px;border-radius:50%;background:var(--green-t);color:var(--green-d);display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:2px}
-.inc .v{margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--gray2);white-space:nowrap;padding-top:3px}
-.total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 0;margin-top:8px;border-top:2px solid var(--ink)}
-.total .t{font-family:var(--disp);font-size:26px;transform:skewX(-8deg)}
-.total .v{font-family:var(--mono);color:var(--gray2);text-decoration:line-through;font-size:15px}
-.sticky-buy{position:sticky;top:112px}
-
-/* grids */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.tile{background:var(--slate);border-radius:20px;padding:28px}
-.tile .n{font-family:var(--disp);font-size:14px;letter-spacing:.14em;color:var(--green-d);margin-bottom:12px}
-.tile p{margin:0;color:var(--gray)}
-
-/* outcomes */
-.outcome{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)}
-.outcome:first-child{border-top:0}
-.outcome .big{flex:0 0 110px;font-family:var(--disp);font-size:52px;line-height:.85;color:var(--green);transform:skewX(-8deg);transform-origin:left}
-.outcome p{margin:0;color:var(--gray)}
-.outcome b{color:var(--ink);font-weight:600}
-
-/* testimonials */
-
-
-
-
-
-
-/* process */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.step{background:var(--white);border:1.5px solid var(--hair);border-radius:16px;padding:22px 18px}
-.step .n{font-family:var(--disp);font-size:36px;line-height:.8;color:var(--green);transform:skewX(-8deg);transform-origin:left;margin-bottom:12px}
-.step b{display:block;margin-bottom:6px}
-.step p{margin:0;font-size:14px;color:var(--gray)}
+.pricebox { margin-top: 20px; border-radius: 20px; padding: 18px 16px 16px; scroll-margin-top: 16px; background: var(--paper); color: var(--ink); }
+.pricebox .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.pricebox .was { font-family: var(--mono); font-size: 13px; color: var(--ink-3); }
+.pricebox .now { font-family: var(--display); font-size: 72px; line-height: .85; transform: skewX(-8deg); display: inline-block; }
+.pricebox .tagp { font-family: var(--mono); font-size: 12px; font-weight: 600; background: var(--green); color: #fff; padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
+.inc { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 7px; font-size: 15px; }
+.inc li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+.inc li::before { content: "✓"; color: var(--green); font-weight: 700; }
+.opts { display: grid; gap: 8px; margin: 16px 0 0; border: 0; padding: 0; min-width: 0; }
+.opts legend { font-size: 13px; font-weight: 600; margin-bottom: 8px; padding: 0; }
+.opt { position: relative; display: block; cursor: pointer; } .opt input { position: absolute; opacity: 0; pointer-events: none; }
+.opt-box { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: center; border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; transition: border-color .12s, background .12s; }
+.opt-box .dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--ink-3); display: grid; place-items: center; }
+.opt input:checked + .opt-box { border-color: var(--green); background: var(--green-wash); }
+.opt input:checked + .opt-box .dot { border-color: var(--green); } .opt input:checked + .opt-box .dot::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+.opt input:focus-visible + .opt-box { outline: 3px solid var(--ink); outline-offset: 2px; }
+.opt-box .name { font-weight: 600; font-size: 15px; line-height: 1.2; min-width: 0; } .opt-box .name small { display: block; font-weight: 400; color: var(--ink-2); font-size: 12.5px; margin-top: 2px; }
+.opt-box .amt { font-family: var(--mono); font-weight: 600; font-size: 15px; text-align: right; line-height: 1.2; } .opt-box .amt small { display: block; font-size: 11px; color: var(--ink-3); font-weight: 500; }
+.badge { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: #fff; border-radius: 5px; padding: 2px 6px; margin-left: 6px; vertical-align: 2px; }
+.agree { display: grid; grid-template-columns: 22px 1fr; gap: 10px; margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--amber-wash); font-size: 13.5px; line-height: 1.4; cursor: pointer; }
+.agree input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--green); }
+.secure { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.secure span { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line); border-radius: 6px; padding: 4px 7px; }
+.guarantee { margin-top: 18px; display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; }
+.seal { width: 64px; height: 64px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; text-align: center; font-family: var(--display); line-height: .85; font-size: 13px; letter-spacing: .03em; box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--green); }
+.seal b { display: block; font-size: 26px; font-weight: 400; }
+.guarantee p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,.8); line-height: 1.4; }
+.guarantee p b { color: #fff; }
+.byline { margin: 22px 0 0; font-size: 14px; color: rgba(255,255,255,.6); text-align: center; }
 
 /* faq */
-.faq details{border-top:1px solid var(--hair);padding:18px 0}
-.faq details:last-of-type{border-bottom:1px solid var(--hair)}
-.faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:"+";font-family:var(--disp);font-size:26px;color:var(--green);flex:0 0 auto}
-.faq details[open] summary:after{content:"–"}
-.faq p{margin:12px 0 0;color:var(--gray);max-width:760px}
+.faq { margin-top: 18px; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 16px 2px; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--mono); font-size: 20px; line-height: 1; color: var(--ink-3); transition: transform .15s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 2px 16px; color: var(--ink-2); font-size: 15px; }
+.dfy { margin: 22px 0 0; text-align: center; font-size: 14.5px; color: var(--ink-2); }
+.dfy a { color: var(--ink); font-weight: 600; }
+footer { padding: 28px 16px 8px; background: var(--slate); } footer .wordmark { font-size: 24px; }
+footer nav { display: flex; gap: 16px; flex-wrap: wrap; margin: 14px 0; font-size: 13px; } footer nav a, footer nav span { color: var(--ink-2); }
+footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin: 0 0 8px; } footer .terms b { color: var(--ink-2); }
 
-/* dark cta */
-.dark{background:var(--ink);color:#fff;overflow:hidden}
-.dark .eyebrow{color:var(--green-l)}
-.dark .lead,.dark .sub{color:var(--dgray)}
-.dark .note{color:var(--gray2)}
-.dark{padding:0}
-.mh2{aspect-ratio:16/9}
-.thinbar{display:flex;align-items:center;justify-content:center;gap:18px;padding:18px 24px;flex-wrap:wrap}
-.thinbar-t{font-family:var(--disp);font-size:26px;letter-spacing:.02em;line-height:1;transform:skewX(-8deg);color:var(--ink)}
-.thinbar-t .g{color:var(--green)}
-.mh2:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,15,0) 30%,rgba(13,13,15,.55) 65%,rgba(13,13,15,.9) 100%);z-index:3;pointer-events:none}
-.mayahero .mh-copy2{left:7%;right:auto;top:auto;bottom:12%;transform:none;max-width:52%;text-align:left}
-.mayahero .mh-copy2.show{transform:none}
-.mayahero .mh-copy2 .note{color:rgba(255,255,255,.6)}
-@media(max-width:833px){.mayahero .mh-copy2{right:6%;left:6%;max-width:88%;bottom:70px}}
-.mayahero .mh-copy2 h1{color:#fff}
-.mh-copy2 .eyebrow{color:var(--green-l)}
-.mayahero .mh-copy2 .mh-sub{color:rgba(255,255,255,.88)}
-.mayahero .mh-copy.mh-copy2 .mh-sub b{color:#fff}
-.mh2 .mh-ctrl{background:rgba(255,255,255,.18);color:#fff}
-.mh2 .mh-ctrl:hover{background:rgba(255,255,255,.32)}
-/* second hero: full-bleed image with text on it */
-.himg{position:relative;width:100%;margin:0;aspect-ratio:21/9;background:linear-gradient(135deg,#1B1B1F,#0D0D0F);overflow:hidden;line-height:1.2}
-.himg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.himg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,15,0) 40%,rgba(13,13,15,.82) 100%)}
-.himg .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--dgray);font-family:var(--mono);font-size:13px}
-.himg .ht{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:48px var(--edge,32px);text-align:left;color:#fff}
-.himg .ht .in{max-width:var(--max);margin:0 auto}
-.himg .ht b{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(40px,6vw,96px);line-height:.9;letter-spacing:.004em;transform:skewX(-8deg);transform-origin:left;color:#fff}
-.himg .ht span{display:block;margin-top:12px;font-size:clamp(15px,1.5vw,20px);color:rgba(255,255,255,.85);max-width:60ch}
-@media(max-width:600px){.himg{aspect-ratio:4/5}.himg .ht{padding:22px 20px}}
-.dark .wrap{padding-top:80px;padding-bottom:80px}
+/* sticky */
+.sticky { position: fixed; left: 50%; bottom: 0; width: min(var(--col), 100%); transform: translate(-50%, 110%); background: rgba(255,255,255,.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; transition: transform .25s ease; z-index: 20; }
+.sticky.on { transform: translate(-50%, 0); }
+.sticky .p { font-size: 12px; color: var(--ink-2); line-height: 1.25; }
+.sticky .p b { display: block; font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--ink); line-height: 1; transform: skewX(-8deg); transform-origin: left; }
+.sticky .cta { min-height: 50px; width: auto; padding-inline: 20px; font-size: 21px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .sticky, .cta, .meter i { transition: none; } .reveal:not([hidden]) { animation: none; } }
 
-/* footer */
-footer{background:var(--ink);color:var(--dgray);border-top:1px solid var(--dhair);padding:60px 0 40px}
-.foot-grid{display:grid;grid-template-columns:1.1fr 2fr auto;gap:40px;align-items:start}
-.foot-logo img{width:160px;margin-bottom:14px;display:block}
-.foot-brand .foot-tag{color:#fff;font-weight:600;font-size:18px}
-.foot-brand .foot-sub{color:var(--green-l);font-size:14px;margin-top:4px}
-.foot-brand .foot-copy{font-size:12.5px;color:var(--gray2);margin-top:22px;line-height:1.6}
-.foot-links{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.foot-links h5{font-family:var(--disp);font-weight:400;font-size:19px;letter-spacing:.06em;color:#fff;transform:skewX(-8deg);transform-origin:left;margin:0 0 12px}
-.foot-links ul{list-style:none;margin:0;padding:0}
-.foot-links li{font-size:14px;margin-bottom:9px}
-.foot-links a{color:var(--dgray)}
-.foot-links a:hover{color:var(--green-l)}
-.foot-cta{display:flex;justify-content:flex-end}
-@media(max-width:900px){.foot-grid{grid-template-columns:1fr;gap:32px}.foot-cta{justify-content:flex-start}}
-@media(max-width:560px){.foot-links{grid-template-columns:1fr 1fr}}
-.foot-logo img{width:170px;margin-bottom:14px;display:block}
-.foot-tag{color:#fff;font-weight:600;font-size:18px}
-.foot-sub{color:var(--green-l);font-size:14px;margin-top:4px}
-.foot-copy{font-size:12.5px;color:var(--gray2);margin-top:26px}
+/* $37 downsell sheet (shows only on ?checkout=cancel) */
+.ds { position: fixed; inset: 0; z-index: 50; display: flex; align-items: flex-end; justify-content: center; background: rgba(13,13,15,.55); opacity: 0; transition: opacity .2s; }
+.ds[hidden] { display: none; }
+.ds.on { opacity: 1; }
+.ds .sheet { width: min(var(--col), 100%); max-height: 92vh; overflow-y: auto; background: var(--paper); border-radius: 24px 24px 0 0; padding: 26px 22px calc(22px + env(safe-area-inset-bottom)); transform: translateY(40px); transition: transform .25s ease-out; }
+.ds.on .sheet { transform: none; }
+.ds .d { font-size: 40px; }
+.ds ul { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+.ds li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 15.5px; line-height: 1.35; color: var(--ink); }
+.ds li::before { content: ""; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; background: var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat; }
+.ds .price { display: flex; align-items: baseline; gap: 10px; margin: 20px 0 6px; }
+.ds .price b { font-family: var(--display); font-weight: 400; font-size: 54px; line-height: .9; transform: skewX(-8deg); display: inline-block; color: var(--ink); }
+.ds .price span { font-size: 13.5px; color: var(--ink-2); line-height: 1.35; }
+.ds .cta { margin-top: 12px; }
+.ds .no { display: block; width: 100%; margin-top: 10px; padding: 12px; border: 0; background: none; font: inherit; font-size: 14px; color: var(--ink-3); text-decoration: underline; cursor: pointer; }
 
-/* mobile buy bar */
-.buybar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-top:1px solid var(--hair);display:none;z-index:95}
-.buybar .btn{width:100%;justify-content:center}
-
-@media(max-width:900px){
-  section{padding:64px 0}
-  .nav-in{height:70px;padding:0 22px}.nav-logo img{height:44px}.nav-cta{font-size:13px;padding:10px 16px}.nav-cta{font-size:14px;padding:11px 20px}.timer{gap:10px;padding:6px 8px}
-  .offer,.grid3,.grid2{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .sticky-buy{position:static}
-  .outcome .big{flex-basis:84px;font-size:42px}
-  .buybar{display:block}body{padding-bottom:84px}
-}
-@media(max-width:520px){.steps{grid-template-columns:1fr}.price .now{font-size:64px}}
-
-.shots{column-count:5;column-gap:10px;margin:36px auto 0;max-width:1120px;max-height:560px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent 100%);mask-image:linear-gradient(180deg,#000 80%,transparent 100%)}
-.shots .shot{display:inline-block;width:100%;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 10px;border:1px solid var(--hair);border-radius:10px;overflow:hidden}
-.shots .shot img{display:block;width:100%;height:auto}
-@media(max-width:1000px){.shots{column-count:4;max-height:520px}}
-@media(max-width:760px){.shots{column-count:4;max-height:460px}}
-@media(max-width:480px){.shots{column-count:4;max-height:420px;column-gap:6px}.shots .shot{margin-bottom:6px}}
-
-.cast{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:36px}
-.cast .face{position:relative;border-radius:16px;overflow:hidden;background:var(--slate)}
-.cast .face img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
-.cast .face-l{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(180deg,rgba(13,13,15,0),rgba(13,13,15,.85));color:#fff;display:flex;justify-content:space-between;align-items:baseline;font-size:13px}
-.cast .face-l b{font-family:var(--disp);font-weight:400;font-size:20px;letter-spacing:.03em}
-.compare{margin-top:40px;border:1px solid var(--hair);border-radius:20px;overflow:hidden}
-.cmp-row{display:grid;grid-template-columns:1fr 1.4fr 1.4fr;gap:0;border-top:1px solid var(--hair)}
-.cmp-row>div{padding:18px 20px;font-size:15px;line-height:1.45}
-.cmp-row>div:first-child{font-weight:700}
-.cmp-head{border-top:0;background:var(--slate);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.cmp-head>div{font-weight:700}
-.cmp-us{background:rgba(15,169,104,.08);border-left:1px solid var(--hair)}
-.cmp-head .cmp-us{color:var(--green-d)}
-.guar{margin-top:18px;padding:14px 16px;border:1px solid var(--green);border-radius:14px;font-size:14px;line-height:1.45;background:rgba(15,169,104,.06)}
-@media(max-width:900px){.cast{grid-template-columns:repeat(3,1fr)}.cmp-row{grid-template-columns:1fr}.cmp-row>div{padding:12px 16px}.cmp-us{border-left:0}.cmp-head{display:none}}
-
-.stat-hero{background:rgba(15,169,104,.14);box-shadow:inset 0 0 0 1.5px var(--green)}
-.stat-hero b{color:#fff}
-.stat-hero em{color:var(--green-l)}
-.stat-hero strong{color:#fff;font-weight:600}
-.stats-in{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr)}
-.stat{min-width:0}.stat em{white-space:normal!important}.stat b{font-size:clamp(44px,4.6vw,72px)!important}
-.samples{padding:80px 0 72px}
-.sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;max-width:1040px;margin-left:auto;margin-right:auto}
-.sample{position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--ink);pointer-events:none;user-select:none}
-.sample video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.sample video{pointer-events:none;-webkit-user-select:none;user-select:none;background:var(--ink)}
-.sample video::-webkit-media-controls{display:none!important}
-.sample video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
-.sample video[src=""]{display:none}
-.sample-ph{position:absolute;inset:0;display:grid;place-items:center;color:#86868b;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:1.5px dashed #333338;border-radius:20px}
-.sample video:not([src=""]) + .sample-ph{display:none}
-.inc.stack li{padding:16px 0;font-size:16px;align-items:flex-start}
-.inc.stack .it{display:flex;flex-direction:column;gap:3px}
-.inc.stack .it b{font-family:var(--disp);font-weight:400;font-size:26px;line-height:1;letter-spacing:.02em;transform:skewX(-8deg);transform-origin:left;display:inline-block}
-.inc.stack .it span{color:var(--gray);font-size:15px;line-height:1.45}
-.inc.stack .v{font-size:14px;color:var(--ink);font-weight:600;padding-top:4px}
-.total.big .t{font-size:30px}
-.total.big .v{font-size:22px}
-.today{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;padding:16px 18px;border-radius:14px;background:var(--ink);color:#fff}
-.today .t{font-family:var(--disp);font-size:30px;transform:skewX(-8deg);transform-origin:left}
-.today .v{font-family:var(--disp);font-size:48px;line-height:.9;color:var(--green-l)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.cmp-title{margin-top:72px}
-.trend-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
-.trend-photo img{width:100%;border-radius:20px;display:block}
-@media(max-width:1100px){.grid4{grid-template-columns:1fr}.stats-in{grid-template-columns:1fr 1fr}}
-@media(max-width:760px){.sample-grid{display:flex;grid-template-columns:none;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding:0 16px 8px;scrollbar-width:none}.sample-grid::-webkit-scrollbar{display:none}.sample-grid>*{flex:0 0 80%;scroll-snap-align:center}.trend-grid{grid-template-columns:1fr}.stats-in{grid-template-columns:1fr}.t-title{font-size:26px!important;white-space:normal!important}}
-
-/* newsletter section */
-.nl{background:#0D0D0F;color:#fff;padding:72px 0}
-.nl .wrap{max-width:860px;text-align:center}
-.nl .eyebrow{color:#0FA968;margin-bottom:14px}
-.nl h2{font-family:var(--disp);font-weight:400;transform:skewX(-8deg);transform-origin:center;font-size:clamp(56px,8vw,104px);line-height:.9;letter-spacing:.01em;color:#fff;margin:0 0 22px}
-.nl p.sub{color:rgba(255,255,255,.72);font-size:19px;line-height:1.55;max-width:52ch;margin:0 auto 34px}
-.nl form{display:flex;flex-direction:column;gap:10px;max-width:440px;margin:0 auto;align-items:stretch}
-.nl input[type=email]{flex:0 0 auto;display:block;width:100%;height:52px;min-height:52px;max-height:52px;box-sizing:border-box;background:#17171B;border:1px solid #2A2A30;border-radius:10px;color:#fff;font-size:16px;line-height:52px;padding:0 18px;outline:none;-webkit-appearance:none;appearance:none}
-.nl input[type=email]::placeholder{color:#7A7A82}
-.nl input[type=email]:focus{border-color:#0FA968}
-.nl button{flex:0 0 auto;height:52px;box-sizing:border-box;width:100%;background:#0FA968;color:#fff;border:none;border-radius:10px;font-family:var(--body);font-weight:600;font-size:16px;padding:0 28px;cursor:pointer;transition:background .2s;white-space:nowrap}
-.nl button:hover{background:#0C8E57}
-.nl .nl-note{color:rgba(255,255,255,.4);font-size:12.5px;margin-top:16px}
-.nl .nl-done{display:none;color:#37D48F;font-family:var(--disp);transform:skewX(-8deg);font-size:28px;letter-spacing:.02em;margin-top:6px}
-@media(max-width:520px){.nl form{flex-direction:column}.nl button{width:100%}}
+/* comment feed (real screenshots, cropped) */
+.feed { margin-top: 24px; border-radius: 18px; overflow: hidden; background: #191B1F; box-shadow: 0 12px 34px rgba(13,13,15,.16); }
+.feed img { display: block; width: 100%; height: auto; }
+.feed-note { margin: 10px 0 0; font-size: 13px; color: var(--ink-3); text-align: center; }
 </style>
 </head>
 <body>
 
-<div class="fold">
-<header class="nav"><div class="nav-in">
-  <a class="nav-logo" href="https://buildwithtrend.com"><img src="media/a79cb2ad7e.png" alt="TREND — Up and to the right."></a>
-  <div class="timer" id="timer">
-    <div class="t-row"><span class="t-title">Launch price for the first 100 people</span></div>
-    <div class="t-sub"><s data-anchor>$1,499</s> → <b data-price>$497</b> for the first 100 buyers. Then it goes back to full price.</div>
+
+<div class="page">
+  <div class="banner">
+    <div class="row1"><span>Launch price <s>$1,499</s> <em>$497</em></span><span>first 100 buyers</span></div>
+    <div id="spots" hidden><div class="meter" aria-hidden="true"><i id="meter-fill"></i></div><div class="meter-label" id="meter-label"></div></div>
   </div>
-  <a class="btn btn-p nav-cta" href="#buy" data-buy>Get The Human Layer <s data-anchor>$1,499</s> <b data-price>$497</b> <span class="arw">→</span></a>
-</div></header>
+  <div class="logo"><span class="wordmark">TREND<span>/</span></span><small>The Human Layer</small></div>
 
-<!-- 1 HERO: Maya knocking, full spread -->
-<section class="mayahero" id="top">
-  <video id="mayaPlayer" autoplay muted playsinline poster="media/13263c60fa.jpg"><source src="media/98f638c7b8.mp4" type="video/mp4"></video>
-  <img class="mh-still" id="mhStill" src="media/7f6a1b25bc.jpg" alt="">
-  <div class="mh-copy" id="mhCopy">
-    <p class="eyebrow">The Human Layer · by TREND /</p>
-    <h1>Make AI content<br><span class="g">nobody can tell is AI.</span></h1>
-    <p class="mh-sub"><b>The step-by-step guide for AI avatars that look, move and sound real.</b> The exact tools, prompts, voice settings and second-by-second timing we use, plus a Claude co-pilot that does the hard parts with you.</p>
-    <a class="btn btn-p btn-lg" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a>
-    <span class="note">Instant access. One payment. Claude co-pilot included.</span>
-    <span class="note" style="color:var(--ink);font-weight:600;margin-top:8px">This is the system behind Maya: 50,000+ views overnight on her first post, and a comment section asking how.</span>
-  </div>
-  <div class="mh-controls">
-    <button class="mh-ctrl" id="mhSound" aria-label="Sound"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3L11 6v12L7 14.5H4z" fill="currentColor" stroke="none"/><g id="mhWave"><path d="M15.5 9a4.5 4.5 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/></g></svg></button>
-    <button class="mh-ctrl" id="mhReplay" aria-label="Replay"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 1 0 2-4.9"/><path d="M4 4v4h4"/></svg></button>
-  </div>
-</section>
-<div class="stats"><div class="stats-in">
-  <div class="stat"><b>50K+</b><div><em>Views overnight</em><span>Maya's first post. Nobody could tell she wasn't real, and the comments asked how. This is how.</span></div></div>
-  <div class="stat stat-hero"><b>1</b><div><em>Claude co-pilot, built in</em><span><strong>Your Claude becomes a production studio built just for you.</strong> It writes every prompt, shapes your scripts, listens to your audio and times every glance, pause and laugh to the exact second.</span></div></div>
-  <div class="stat"><b>15</b><div><em>Ways real people move</em><span>A story, a hot take and a confession all move differently. Your character knows all 15. That's why they read as human.</span></div></div>
-  <div class="stat"><b>152</b><div><em>Pages, click by click</em><span>Face, character, personality, voice, timing, video. What to open, what to click, what to paste.</span></div></div>
-</div></div>
-</div><!-- /fold -->
+  <!-- 1. THE PROMISE -->
+  <section class="hero wrap" id="top">
+    <h1 class="d" id="h1">Make the best AI avatar on the market <span class="g">in under an hour.</span></h1>
+    <p class="sub" id="sub">The click-by-click system plus a Claude co-pilot that writes every prompt for you. <b>No AI experience needed.</b></p>
 
-<!-- 1b SAMPLES -->
-<section class="samples" id="samples"><div class="wrap center">
-  <p class="eyebrow">Real samples. 100% AI. Zero cameras.</p>
-  <h2>The best AI avatars on the market.<br><span class="g">See for yourself.</span></h2>
-  <p class="lead" style="margin-left:auto;margin-right:auto"><b>None of these people exist.</b> No actors, no cameras, no reshoots. Every blink, glance and smile below was made with The Human Layer, and you'll make yours the same way.</p>
-  <div class="sample-grid">
-    <div class="sample"><video class="sample-vid" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" preload="none" aria-hidden="true" tabindex="-1" poster="media/05463090cf.jpg" data-src="media/ebcff88ad3.mp4"></video></div>
-    <div class="sample"><video class="sample-vid" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" preload="none" aria-hidden="true" tabindex="-1" poster="media/511afbce1f.jpg" data-src="media/e56cfc4171.mp4"></video></div>
-    <div class="sample"><video class="sample-vid" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" preload="none" aria-hidden="true" tabindex="-1" poster="media/9af1322cab.jpg" data-src="media/fe0f8f40df.mp4"></video></div>
-  </div>
-  <div class="cta-stack" style="margin-top:36px"><a class="btn btn-p btn-lg" href="#buy" data-buy>Make mine look this real <span class="arw">→</span></a><span class="note">Launch price for the first 100 people. Claude Co-Pilot included.</span></div>
+    <figure class="slot hero-slot">
+      <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/00-hero-poster.jpg" data-src="media/00-hero.mp4"></video>
+            <button class="sound" id="sound" type="button" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3z"/></svg><span>Tap to watch with sound</span></button>
+    </figure>
 
-</div></section>
-
-
-<!-- 2 WHAT IT IS -->
-<section class="divider" id="what"><div class="wrap">
-  <p class="eyebrow">Why most AI content looks fake</p>
-  <h2>Everyone has the tools.<br>Almost nobody has the human layer.</h2>
-  <p class="lead">A face doesn't make someone feel real. <b>Behavior does.</b> The glance away to remember. The pause before a sincere line. The laugh that lands a beat late. Most AI videos skip all of it, and viewers can tell in two seconds. The Human Layer is the system built around it.</p>
-  <div class="grid3">
-    <div class="tile"><div class="n">LOOK REAL</div><h3>A face that holds.</h3><p>One photoreal master image, locked from every angle, so your character is identical in every photo and every video. Pores, freckles, flyaway hairs. Skin, not a render.</p></div>
-    <div class="tile"><div class="n">MOVE REAL</div><h3>A personality, not a puppet.</h3><p>A personality block gives your character habits people recognize. A beat timeline puts every glance, nod and laugh on the exact second it happens in the audio. Still when it should be still.</p></div>
-    <div class="tile"><div class="n">SOUND REAL</div><h3>A voice that never changes.</h3><p>The voice settings, tags and punctuation that make a script sound spoken, not read. One voice per character, locked forever, so every video sounds like the same person.</p></div>
-  </div>
-  <div class="sec-cta"><a class="btn btn-p btn-lg" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a><span class="sec-cta-note big"><b style="color:var(--ink)">Everything in one purchase. Instant download.</b><br><s>$1,499</s> &nbsp;<b style="color:var(--green-d)">$497</b> &nbsp;for the first 100 people.</span></div>
-</div></section>
-
-<!-- 3 OFFER -->
-<section class="divider" id="buy" style="scroll-margin-top:90px"><div class="wrap">
-  <div class="offer">
-    <div>
-      <p class="eyebrow">What's inside</p>
-      <h2>Our entire playbook.<br><span class="g">Nothing held back.</span></h2>
-      <p class="lead">The same system we use to build avatars for clients who pay us <b>$5,000+</b>. Here's everything you get today:</p>
-      <ul class="inc stack"><li><span class="ck">✓</span><span class="it"><b>The Complete Guide</b><span>The exact formula and system we use to get 10K clients a month. 152 pages, 8 modules, click by click, from blank page to talking human.</span></span><span class="v">$497 value</span></li><li><span class="ck">✓</span><span class="it"><b>The Claude Co-Pilot</b><span>28 pages of instructions and code that turn your Claude into a production studio built just for you. It writes your prompts, scripts and timing. You just make the calls.</span></span><span class="v">$497 value</span></li><li><span class="ck">✓</span><span class="it"><b>The Arc Library</b><span>15 ways real people move on camera: stories, hot takes, advice, reviews, confessions and more. The reason your videos read as human.</span></span><span class="v">$297 value</span></li><li><span class="ck">✓</span><span class="it"><b>The Personality System</b><span>The template and beat library that give your character habits people recognize, and kill the robotic, over-acted AI look.</span></span><span class="v">$197 value</span></li><li><span class="ck">✓</span><span class="it"><b>Camera &amp; Light Libraries</b><span>The exact cameras, lenses and lighting setups that make an image read as a photograph, not a render.</span></span><span class="v">$147 value</span></li><li><span class="ck">✓</span><span class="it"><b>6 Ready-to-Run Characters</b><span>Prompts for a woman and a man in their 20s, 40s and 65+. Change three details and they're yours.</span></span><span class="v">$147 value</span></li><li><span class="ck">✓</span><span class="it"><b>50 Ways to Make Money With It</b><span>Scene ideas plus 50 ways to use your avatar: content, ads, faceless pages and client work.</span></span><span class="v">$97 value</span></li><li><span class="ck">✓</span><span class="it"><b>Real-Build Troubleshooting</b><span>Every problem we hit and the exact fix, so you skip weeks of burned credits.</span></span><span class="v">$97 value</span></li><li><span class="ck">✓</span><span class="it"><b>Lifetime Updates</b><span>When the AI tools change, your guide changes with them.</span></span><span class="v">INCLUDED</span></li></ul>
-      <div class="total big"><span class="t">Total value</span><span class="v">$1,976</span></div>
-      <div class="today"><span class="t">Your price today</span><span class="v"><span data-price>$497</span></span></div>
-      <div class="sec-cta"><a class="btn btn-p" href="#" data-buy data-direct>Get The Human Layer for <span data-price>$497</span> <span class="arw">→</span></a><span class="sec-cta-note">Back to <s data-anchor>$1,499</s> after the first 100.</span></div>
+    <div class="cta-block">
+      <a class="cta buy" href="#buy" id="hero-cta">Make my avatar — $497<small>instant access by email</small></a>
+      <p class="shield-line"><svg width="14" height="15" viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V4l8-3z" fill="#0FA968"/><path d="M6 11l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>TREND Money-Back Guarantee available<a href="#terms" class="ast" aria-label="See guarantee terms">*</a></p>
     </div>
+  </section>
 
-    <div class="card hi sticky-buy" id="getbox" style="scroll-margin-top:80px">
-      <p class="eyebrow">Get it today</p>
-      <div class="pname" data-product-name>The Human Layer</div>
-      <div class="price"><span class="now" data-price>$497</span><span class="was" data-anchor>$1,499</span></div>
-      <p class="price-note">One-time. Instant access. No subscription.</p>
-      <a class="btn btn-p btn-lg" style="width:100%;justify-content:center" href="#" data-buy>Get The Human Layer <span class="arw">→</span></a>
-      <span class="note">Secure checkout. Instant delivery.</span>
-      <ul class="inc" style="margin-top:20px;font-size:14px">
-        <li><span class="ck">✓</span><span>No experience needed: every step says what to open, click and paste</span></li>
-        <li><span class="ck">✓</span><span>Claude does the hard parts with you (Co-Pilot included)</span></li>
-        <li><span class="ck">✓</span><span>Unlimited characters, yourself and clients included</span></li>
-        <li><span class="ck">✓</span><span>No camera, no studio, no model, no reshoots</span></li>
-        <li><span class="ck">✓</span><span>Digital product, instant download</span></li>
+  <!-- 2. EXAMPLES -->
+  <section class="sec wrap" id="examples">
+    <p class="eyebrow">See for yourself</p>
+    <h2 class="d">Endless examples. <span class="g">All AI.</span></h2>
+    <p class="copy">Every person below is AI, made with The Human Layer.</p>
+    <div class="swipe" aria-label="Examples, swipe for more">
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-01.jpg" data-src="media/ex-01.mp4" class="lazy-vid" aria-label="Talking head, made with The Human Layer"></video><span class="label">Talking head</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-02.jpg" data-src="media/ex-02.mp4" class="lazy-vid" aria-label="Product review, made with The Human Layer"></video><span class="label">Product review</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-03.jpg" data-src="media/ex-03.mp4" class="lazy-vid" aria-label="Fashion, made with The Human Layer"></video><span class="label">Fashion</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-04.jpg" data-src="media/ex-04.mp4" class="lazy-vid" aria-label="YouTube lesson, made with The Human Layer"></video><span class="label">YouTube lesson</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-05.jpg" data-src="media/ex-05.mp4" class="lazy-vid" aria-label="Get ready with me, made with The Human Layer"></video><span class="label">Get ready with me</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-06.jpg" data-src="media/ex-06.mp4" class="lazy-vid" aria-label="Spokesperson, made with The Human Layer"></video><span class="label">Spokesperson</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-07.jpg" data-src="media/ex-07.mp4" class="lazy-vid" aria-label="UGC ad, made with The Human Layer"></video><span class="label">UGC ad</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-08.jpg" data-src="media/ex-08.mp4" class="lazy-vid" aria-label="Lookbook, made with The Human Layer"></video><span class="label">Lookbook</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-09.jpg" data-src="media/ex-09.mp4" class="lazy-vid" aria-label="Try-on, made with The Human Layer"></video><span class="label">Try-on</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-10.jpg" data-src="media/ex-10.mp4" class="lazy-vid" aria-label="Selfie vlog, made with The Human Layer"></video><span class="label">Selfie vlog</span></figure>
+      <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-11.jpg" data-src="media/ex-11.mp4" class="lazy-vid" aria-label="Beauty tutorial, made with The Human Layer"></video><span class="label">Beauty tutorial</span></figure>
+    </div>
+    <p class="swipe-hint">Swipe →</p>
+  </section>
+
+  <!-- 2. PROOF -->
+  <section class="sec wrap" id="proof">
+    <p class="eyebrow">Our first avatar's first post</p>
+    <h2 class="d">Maya went viral <span class="g">overnight.</span></h2>
+
+    <div class="stats" aria-label="Maya's first post">
+      <div><span class="num">60K+</span><span>views</span></div>
+      <div><span class="num">1,000+</span><span>comments</span></div>
+      <div><span class="num">1,000+</span><span>shares</span></div>
+      <div><span class="num">1,000+</span><span>DMs</span></div>
+    </div>
+    <p class="viral">We turned Maya into an overnight sensation, and everyone was asking <b>HOW</b> to do it.</p>
+    <div class="feed"><img src="media/06-comments.jpg" width="920" height="1725" alt="Real Instagram comments on Maya's post: people asking if she's real, how it was made, and how to buy it" loading="lazy"></div>
+    <p class="feed-note">Real comments from Maya's first post. Plus 1,000+ more.</p>
+  </section>
+
+  <!-- 3. USES -->
+  <section class="sec dark wrap" id="uses">
+    <p class="eyebrow">One avatar. Endless uses.</p>
+    <h2 class="d">Use your avatar <span class="g">for:</span></h2>
+    <ul class="uses-list">
+      <li>Talking-head videos</li>
+      <li>An AI twin of you</li>
+      <li>UGC ads</li>
+      <li>Product shots</li>
+      <li>Podcast clips</li>
+      <li>YouTube and course videos</li>
+      <li>Fashion and model shoots</li>
+      <li>Your brand's spokesperson</li>
+      <li>Real estate tours</li>
+      <li>Selling avatars to clients</li>
+    </ul>
+    <p class="uses-more">And anything else you'd normally need a camera for.</p>
+  </section>
+
+  <!-- 5. OFFER -->
+  <section class="sec dark wrap" id="offer">
+    <p class="eyebrow">The whole system</p>
+    <h2 class="d">Everything you need. <span class="g">$497.</span></h2>
+
+    <div class="pricebox" id="buy">
+      <div class="top"><div><div class="was"><s>$1,499</s> after the first 100</div><span class="now" id="now">$497</span></div><span class="tagp">Launch price</span></div>
+      <ul class="inc">
+        <li>The step-by-step system, click by click</li>
+        <li>Claude co-pilot that writes your prompts and scripts</li>
+        <li>6 ready-made avatars to start with</li>
+        <li>50 ways to use your avatar, from content to client work</li>
+        <li>Free updates when the tools change</li>
       </ul>
+      <p class="payline"><b>One payment of $497.</b> TREND Money‑Back Guarantee available.*</p>
+      <div class="cta-block" style="margin-top:14px"><a class="cta" href="#buy" id="buy-cta">Make my avatar — $497</a><p class="under" id="buy-note"></p></div>
+      <div class="secure"><span>Secure checkout by Stripe</span><span>Instant access by email</span></div>
     </div>
-  </div>
-</div></section>
 
-<!-- 5 TESTIMONIALS -->
-<section class="divider center" id="proof"><div class="wrap">
-  <p class="eyebrow">Proof</p>
-  <h2>Nobody could tell.</h2>
-  <p class="lead">Real comments on the content this system makes. Maya's first post did 50,000+ views overnight, and the most common question in the comments was how.</p>
-  <div class="shots">
-    <div class="shot"><img src="media/10a23e67ac.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/fde42a757b.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/0345c10a6c.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/c471df608f.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/5b0d6abb78.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/87bcf48ac9.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/a90be232aa.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/a5ef3a7678.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/799fd1dd15.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/3aa2296b0c.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/9d0ad848e6.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/62dbf80d59.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/dff691c09b.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/3c208e50ff.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/12bbce4b2f.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/2040f24a1a.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/54d7e1cf0e.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/2c99bed6a1.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/0ecb6ac9ed.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/fb91dadc10.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/1bcb037c62.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/59058ca800.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/55cd51e2b2.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/28581eec28.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/0e9b0d86c6.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/909fae8cd0.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/c0d87c4771.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/ce83f3448b.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/7e770ef831.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/52d97ee371.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/9618c4a608.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/63ab4c6179.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/57807b98e8.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/102971313e.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/a39b5f7c57.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/48681e688d.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/51648e0fd6.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/363f3353d8.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/a314711433.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/d5e33e9b5b.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/d427ff5914.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/a52d7359ca.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/f5ad9d9cc4.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/84f689ea55.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/b19d1d6d20.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/ff7de52fe8.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/adbd5fa5d7.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/66f8acda92.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/14e77adbb8.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/cea01a32cc.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/04d3e494b9.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/6bae25dc83.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/798358bdd7.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/615000484e.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/137a7f5255.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/320f444eb7.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/684b3bdfb3.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/6851ab2c4d.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/56f56ef3e8.jpg" alt="" loading="lazy"></div>
-    <div class="shot"><img src="media/05e9409cf3.jpg" alt="" loading="lazy"></div>
-  </div>
-  <div class="cta-stack" style="margin-top:36px">
-    <a class="btn btn-p btn-lg" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a>
-    <span class="note">Instant access. All the prompts. All the steps.</span>
-  </div>
-</div></section>
+    <div class="guarantee">
+      <div class="seal" aria-hidden="true"><div><b>30</b>DAY<br>GUARANTEE</div></div>
+      <p><b>The TREND Money-Back Guarantee<a href="#terms" class="ast" aria-label="See guarantee terms">*</a></b> Give it 30 days. If you don't like it or it isn't working, we'll personally get on a call with you to troubleshoot it, fix it and make it right. If it still doesn't work, we give you your money back.<a href="#terms" class="ast" aria-label="See guarantee terms">*</a></p>
+    </div>
+  </section>
 
-<!-- 5b CAST -->
-<section class="divider center" id="cast"><div class="wrap">
-  <p class="eyebrow">None of these people exist</p>
-  <h2>Six faces. Zero photoshoots.</h2>
-  <p class="lead" style="margin-left:auto;margin-right:auto">Every one of them was made with the prompts inside The Human Layer. You get all six as starting points, and you can build anyone you can describe: a new character, a version of yourself, or a client.</p>
-  <div class="cast"><div class="face"><img src="media/a8f199337d.jpg" alt="Maya, an AI character made with The Human Layer"><div class="face-l"><b>MAYA</b><span>26</span></div></div><div class="face"><img src="media/12a877672d.jpg" alt="Jordan, an AI character made with The Human Layer"><div class="face-l"><b>JORDAN</b><span>27</span></div></div><div class="face"><img src="media/ccaa5c401f.jpg" alt="Elena, an AI character made with The Human Layer"><div class="face-l"><b>ELENA</b><span>45</span></div></div><div class="face"><img src="media/dda8d2d332.jpg" alt="Daniel, an AI character made with The Human Layer"><div class="face-l"><b>DANIEL</b><span>45</span></div></div><div class="face"><img src="media/a1953e30d7.jpg" alt="Grace, an AI character made with The Human Layer"><div class="face-l"><b>GRACE</b><span>67</span></div></div><div class="face"><img src="media/244a967393.jpg" alt="Walter, an AI character made with The Human Layer"><div class="face-l"><b>WALTER</b><span>70</span></div></div></div>
-  <div class="cta-stack" style="margin-top:36px"><a class="btn btn-p btn-lg" href="#buy" data-buy>Build mine <span class="arw">→</span></a><span class="note">Six starter characters included. Unlimited characters after that.</span></div>
-</div></section>
+  <!-- 7. FAQ -->
+  <section class="sec wrap" id="faq">
+    <h2 class="d">Questions</h2>
+    <div class="faq">
+      <details><summary>I've never used AI. Can I really do this?</summary><p>Yes. Every step says what to open, what to click and what to paste. Claude writes the prompts with you.</p></details>
+      <details><summary>How long until my first avatar?</summary><p>Under an hour for your first avatar. Every video after that takes minutes.</p></details>
+      <details><summary>What else do I pay for?</summary><p>Higgsfield credits, ElevenLabs Starter and Claude Pro. The guide names the exact plans before you spend anything.</p></details>
+      <details><summary>What do I get after I pay?</summary><p>Instant access by email, usually within a minute: the full system, the Claude co-pilot and the six ready-made avatars.</p></details>
+      <details><summary>Can I make an avatar of me, or a client?</summary><p>Yes. Get written permission from anyone who isn't you. There's a full chapter on real people.</p></details>
+      <details><summary>Do I have to label it as AI?</summary><p>Yes, and the guide shows you how. Label it, and never present an avatar as a real customer.</p></details>
+      <details><summary>What if it doesn't work for me?</summary><p>Email hello@buildwithtrend.com within 30 days. We'll set up a Zoom call, troubleshoot it with you and make it right. If it doesn't work because of an error in our system or something we failed to deliver, you get your money back. One-payment purchases, terms below.</p></details>
+    </div>
+    <p class="dfy">Rather have us build it for you? <a id="link-dfy" href="#">Talk to us about done-for-you</a></p>
+  </section>
 
-<!-- 6 PROCESS -->
-<section class="divider" id="process"><div class="wrap">
-  <p class="eyebrow">How it works</p>
-  <h2>From blank page to a talking human.<br><span class="g">Five steps.</span></h2>
-  <p class="lead">Build the person once, then run the same steps for every video. <b>Claude handles the timing. You make the creative calls.</b></p>
-  <div class="steps">
-    <div class="step"><div class="n">01</div><b>Build the face</b><p>One master headshot from a six-block prompt: real camera, real light, real skin. Pick the best of eight.</p></div>
-    <div class="step"><div class="n">02</div><b>Lock the character</b><p>Angles, a character sheet and a saved identity, so the face never drifts. Then a personality block: how they smile, think and move.</p></div>
-    <div class="step"><div class="n">03</div><b>Write and voice it</b><p>A 30-second script that sounds spoken, with one or two voice tags. One take, and that voice is theirs forever.</p></div>
-    <div class="step"><div class="n">04</div><b>Time the performance</b><p>Upload the audio to Claude. It measures every pause and writes the beat timeline, so each glance and laugh lands on the right second.</p></div>
-    <div class="step"><div class="n">05</div><b>Generate and post</b><p>Scene, sheet, headshot and audio into the video model. Check lips, hands and energy. Caption it, label it as AI, post.</p></div>
-  </div>
-  <div class="sec-cta"><a class="btn btn-p" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a><span class="sec-cta-note big"><b style="color:var(--ink)">Everything you need in one purchase. Instant download.</b><br><s>$1,499</s> &nbsp;<b style="color:var(--green-d)">$497</b> &nbsp;for the first 100 people.</span></div>
-</div></section>
-
-<!-- 6b WHO IT'S FOR -->
-<section class="divider" id="who"><div class="wrap">
-  <p class="eyebrow">Who it's for</p>
-  <h2>Show up every day.<br>Never film every day.</h2>
-  <div class="grid4">
-    <div class="tile"><div class="n">CREATORS</div><h3>Hate the camera? Skip it.</h3><p>Build a character, or an AI version of you, and post daily without getting ready, setting up or filming. Your face, your voice, your time back.</p></div>
-    <div class="tile"><div class="n">FOUNDERS &amp; BRANDS</div><h3>A spokesperson who never needs a reshoot.</h3><p>Product demos, launches, FAQs, ads and welcome videos, in your brand's voice, whenever you need them. Write the script, get the video.</p></div>
-    <div class="tile"><div class="n">MAKE MONEY ONLINE</div><h3>A content business with no camera.</h3><p>Faceless pages, UGC, brand deals and ad creative, all from characters you own. Build them once, post every day, and run as many accounts as you can manage.</p></div>
-    <div class="tile"><div class="n">AGENCIES &amp; FREELANCERS</div><h3>Build avatars for clients. Charge for it.</h3><p>We build these for clients for $5,000 and up. You get the entire method for $497, plus a client-build checklist, so the first project pays for the system ten times over.</p></div>
-  </div>
-  <div class="sec-cta"><a class="btn btn-p btn-lg" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a><span class="sec-cta-note big"><b style="color:var(--ink)">Whoever you are, it works the same way.</b><br><s>$1,499</s> &nbsp;<b style="color:var(--green-d)">$497</b> &nbsp;for the first 100 people.</span></div>
-  <div class="cmp-title"><p class="eyebrow">The difference</p><h2>Why theirs look like AI.<br><span class="g">Why yours won't.</span></h2></div>
-  <div class="compare">
-    <div class="cmp-row cmp-head"><div>What people usually try</div><div>What happens</div><div class="cmp-us">The Human Layer</div></div>
-    <div class="cmp-row"><div>Prompt packs</div><div>A face with no behavior. Reads as AI in two seconds.</div><div class="cmp-us">Face + personality + timing, so it reads as a person.</div></div>
-    <div class="cmp-row"><div>Avatar apps</div><div>Stock faces, stiff delivery, a monthly fee, and everyone's avatar looks the same.</div><div class="cmp-us">Your own characters, unlimited, one-time price.</div></div>
-    <div class="cmp-row"><div>Trial and error</div><div>Weeks of credits burned finding out what doesn't work.</div><div class="cmp-us">Every mistake we made, already fixed, with the troubleshooting to prove it.</div></div>
-  </div>
-  <div class="sec-cta"><a class="btn btn-p" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a><span class="sec-cta-note">One-time. Instant access. Unlimited characters.</span></div>
-</div></section>
-
-<!-- 6c BUILT BY TREND -->
-<section class="divider" id="trend"><div class="wrap"><div class="trend-grid">
-  <div>
-    <p class="eyebrow">Tested and used on our own clients</p>
-    <h2>Built for our clients first.</h2>
-    <p class="lead">We're <b>TREND /</b>, a growth, brand and technology company founded by brothers Christian and Niko Trimino. We build AI avatars for founders and brands who won't go on camera, and The Human Layer is the exact system we use. Every prompt, setting and fix in it was tested on real client videos before it went on the page.</p>
-    <a class="btn btn-p" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a>
-  </div>
-  <div class="trend-photo"><img src="media/37c7ea9603.jpg" alt="Christian and Niko Trimino, founders of TREND /"></div>
-</div></div></section>
-
-<!-- 7 STILL NOT CONVINCED: banner + second video -->
-<section class="divider" id="more" style="padding:0"><div class="wrap center" style="padding:34px 24px 30px">
-  <p class="eyebrow">Win the content game</p>
-  <h2 style="transform-origin:center;font-size:clamp(30px,4vw,54px)">One person. Infinite content. One payment of <span class="g">$497</span>.</h2>
-  <div style="margin-top:20px"><a class="btn btn-p btn-lg" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a></div>
+  <footer id="terms">
+    <span class="wordmark">TREND<span>/</span></span>
+    <nav><a href="https://buildwithtrend.com/terms">Terms</a><a href="https://buildwithtrend.com/privacy">Privacy</a><a href="https://buildwithtrend.com/refunds">Refund policy</a><span>hello@buildwithtrend.com</span></nav>
+    <p class="terms"><b>* TREND Money-Back Guarantee terms.</b> The guarantee is an option you agree to at checkout, and it applies to the $497 purchase only; the $47 Starter is not eligible. By agreeing to it, you get 30 days from purchase to use the system. If you can't make your avatar or it isn't working, email <b>hello@buildwithtrend.com</b> within those 30 days. We'll reach out to schedule a Zoom call, troubleshoot it with you and help fix it. If we find it doesn't work because of an error in our system or something we failed to deliver, we'll refund your purchase in full. Refunds aren't available for results that depend on third-party tools, subscriptions or credits you choose, or for steps that weren't followed.</p>
+    <p class="terms">The video at the top is Christian, filmed for real. Everyone in the examples is an AI avatar. Videos and timings shown are our results; yours depend on your effort and the tools you use. Not affiliated with Anthropic, Higgsfield or ElevenLabs. © 2026 TREND.</p>
+  </footer>
 </div>
-  <div class="mayahero mh2" id="hero2">
-    <video id="mayaPlayer2" muted playsinline preload="metadata" poster="media/4256fef86c.jpg"><source src="media/40a8b46f67.mp4" type="video/mp4"></video>
-    <img class="mh-still" id="mhStill2" src="media/c10fae71e9.jpg" alt="">
-    <div class="mh-copy mh-copy2" id="mhCopy2">
-      <p class="eyebrow">Your turn</p>
-      <h1 data-second-text>First one<br><span class="g">done tonight.</span></h1>
-      <p class="mh-sub" data-second-sub><b>Everyone wants this. Almost nobody knows how.</b> Learn it now, before your feed is full of people who do.</p>
-      <a class="btn btn-p btn-lg" href="#buy" data-buy>I'm Ready! <span class="arw">→</span></a>
-      <span class="note">Instant access. One payment. Claude co-pilot included.</span>
-    </div>
-    <div class="mh-controls">
-      <button class="mh-ctrl" id="mhSound2" aria-label="Sound"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3L11 6v12L7 14.5H4z" fill="currentColor" stroke="none"/><g id="mhWave2"><path d="M15.5 9a4.5 4.5 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/></g></svg></button>
-      <button class="mh-ctrl" id="mhReplay2" aria-label="Replay"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 1 0 2-4.9"/><path d="M4 4v4h4"/></svg></button>
-    </div>
+
+<div class="sticky" id="sticky" aria-hidden="true"><div class="p"><b>$497</b><span id="sticky-sub">instant access by email</span></div><a class="cta buy" href="#buy" tabindex="-1">Make my avatar</a></div>
+
+<div class="ds" id="ds" hidden role="dialog" aria-modal="true" aria-labelledby="ds-title">
+  <div class="sheet">
+    <p class="eyebrow">Before you go</p>
+    <h2 class="d" id="ds-title">Not ready for the whole system? <span class="g">Start with your first character.</span></h2>
+    <p class="copy">Everything starts with the character: one master headshot and a full reference sheet. Get exactly that part of The Human Layer, with the fill-in-the-blank templates we use.</p>
+    <ul>
+      <li>The master headshot template, plus our Maya example</li>
+      <li>Front, side and back angles, built into a character sheet</li>
+      <li>Saving your character in Higgsfield so the face never changes</li>
+    </ul>
+    <div class="price"><b>$47</b><span>Counts toward the full system if you upgrade within 14 days.</span></div>
+    <a class="cta" id="ds-cta" href="#">Get my first character — $47</a>
+    <button class="no" type="button" id="ds-no">No thanks, take me back</button>
   </div>
-</section>
-
-<!-- 8 FAQ -->
-<section class="divider faq" id="faq"><div class="wrap">
-  <p class="eyebrow">Good questions</p>
-  <h2>Everything you need to know.</h2>
-  <div style="margin-top:36px">
-  <details><summary>Do I need any experience with AI tools?</summary><p>No. Every step tells you what to open, what to click and what to paste, and the Claude Co-Pilot fills in the prompts with you. If you can follow a recipe, you can follow this.</p></details>
-  <details><summary>What tools do I need, and what do they cost?</summary><p>Three: Higgsfield for images and video (paid credits), ElevenLabs for the voice (the Starter plan), and Claude for the co-pilot (Pro). CapCut is optional and free. The guide names every tool, setting and plan, and links you to Higgsfield.</p></details>
-  <details><summary>Does Claude really do the hard parts?</summary><p>Yes. The Claude Co-Pilot is included. Load it once and Claude writes your prompts, shapes your scripts, measures your audio and writes the second-by-second beat timeline for every video. You make the creative calls; it does the math.</p></details>
-  <details><summary>Will my character look the same every time?</summary><p>Yes. That's what the character sheet, the saved identity and the two references in every video prompt are for. The method shows you exactly how to lock the face so it holds across hundreds of images and videos.</p></details>
-  <details><summary>Can I use myself, or a real person?</summary><p>Yes, with written permission for anyone but you. There's a dedicated path for real people: their photos, a voice clone from one to three minutes of clean recording, and the fixes for when the likeness doesn't come out right.</p></details>
-  <details><summary>How long until my first video?</summary><p>Plan an afternoon for your first character and your first video. Every video after that is faster, because the character, voice and scene are already built and Claude does the timing.</p></details>
-  <details><summary>What if the AI tools change?</summary><p>They will. The system is written around the method, not one model's buttons, and updates are included. When the tools move, the guide moves with them.</p></details>
-  <details><summary>Do I have to label my content as AI?</summary><p>Yes, and the guide shows you how. Label it, get written permission for real people, and never present a character as a real customer. Done right, AI content performs and keeps your audience's trust.</p></details>
-  <details><summary>How is this delivered?</summary><p>Instantly, by email, as a digital download. You'll have it within a minute of checkout.</p></details>
-  <details><summary>Can I get a refund?</summary><p>Because it's a digital product with instant access, all sales are final. If something's broken, you can't find your download, or you get stuck, email us and we'll get you through it.</p></details>
-  </div>
-  <div class="cta-stack" style="margin-top:40px">
-    <a class="btn btn-p btn-lg" href="#buy" data-buy>Get The Human Layer <span class="arw">→</span></a>
-    <span class="note">Questions? <a href="mailto:hello@buildwithtrend.com" data-support style="color:var(--green-d)">hello@buildwithtrend.com</a></span>
-  </div>
-</div></section>
-
-<section class="nl" id="newsletter"><div class="wrap">
-  <p class="eyebrow">Stay in the loop</p>
-  <h2>Our best moves,<br><span class="g">in your inbox.</span></h2>
-  <p class="sub">The secrets, tools and strategies we use to scale brands and businesses, sent weekly, along with news, fresh insights, free value and exclusive promos.</p>
-  <form id="nlForm" action="https://assets.mailerlite.com/jsonp/2661796/forms/200551665185588866/subscribe" method="post">
-    <input type="email" name="fields[email]" placeholder="Your email" aria-label="email" autocomplete="email" required>
-    <input type="hidden" name="ml-submit" value="1">
-    <input type="hidden" name="anticsrf" value="true">
-    <button type="submit">Count me in →</button>
-  </form>
-  <div class="nl-done" id="nlDone">You're in. Check your inbox.</div>
-  <p class="nl-note">One-click unsubscribe anytime. We never share your email.</p>
-</div></section>
-
-<footer><div class="wrap"><div class="foot-grid"><div class="foot-brand"><div class="foot-logo"><img src="media/4d5a421be5.png" alt="TREND"></div><div class="foot-tag">Up and to the right.</div><div class="foot-sub">Building brands into businesses.</div><div class="foot-copy">&copy; 2026 TREND. All rights reserved.<br>We help brands and businesses make more money.</div></div><div class="foot-links"><div><h5>Start here</h5><ul><li><a href="https://buildwithtrend.com/#apply">Show me my next move</a></li><li><a href="https://buildwithtrend.com/#problem">Find your ceiling</a></li><li><a href="https://buildwithtrend.com/#solution">See what we would build</a></li><li><a href="#buy" data-buy>The Human Layer</a></li></ul></div><div><h5>For founders</h5><ul><li><a href="https://buildwithtrend.com/#problem">No brand yet</a></li><li><a href="https://buildwithtrend.com/#solution">Brand, no business</a></li><li><a href="https://buildwithtrend.com/#solution">Stuck at a ceiling</a></li><li><a href="https://buildwithtrend.com/#solution">Scaling past $1M</a></li></ul></div><div><h5>What we do</h5><ul><li><a href="https://buildwithtrend.com/#who">A partner, not a vendor</a></li><li><a href="https://buildwithtrend.com/#solution">Brand &amp; content</a></li><li><a href="https://buildwithtrend.com/#solution">Growth &amp; systems</a></li><li><a href="https://buildwithtrend.com/#apply">Work with us</a></li></ul></div></div><div class="foot-cta"><a class="btn btn-ghost" href="https://buildwithtrend.com">Go to buildwithtrend.com <span class="arw">&rarr;</span></a></div></div></div></footer>
-
-<div class="buybar"><a class="btn btn-p" href="#buy" data-buy>Get The Human Layer — <span data-price>$497</span> <span class="arw">→</span></a></div>
+</div>
 
 <script>
-(function(){
-  document.querySelectorAll('[data-product-name]').forEach(e=>e.textContent=CONFIG.productName);
-  document.querySelectorAll('[data-price]').forEach(e=>e.textContent=CONFIG.price);
-  document.querySelectorAll('[data-anchor]').forEach(e=>{ if(CONFIG.anchorPrice){e.textContent=CONFIG.anchorPrice;} else {e.style.display='none';} });
-  document.querySelectorAll('[data-support]').forEach(e=>{e.textContent=CONFIG.supportEmail; e.href='mailto:'+CONFIG.supportEmail;});
-  document.title = CONFIG.productName + ' — ' + CONFIG.brand;
-  document.querySelectorAll('[data-buy]').forEach(a=>{ if(a.closest('.card')||a.hasAttribute('data-direct')){ a.href=CONFIG.checkoutUrl; a.target='_blank'; a.rel='noopener'; } });
-  // countdown to Jan 1 (Pacific), price resets
-  (function(){ var el=document.getElementById('cd'); if(!el) return;
-    function nextJan1(){ var now=new Date(); var y=now.getFullYear(); var t=new Date(y,0,1,0,0,0); if(t<=now){ t=new Date(y+1,0,1,0,0,0);} return t; }
-    var target=nextJan1(); function pad(n){return (n<10?'0':'')+n;}
-    function tick(){ var d=target-new Date(); if(d<0)d=0; var s=Math.floor(d/1000); var days=Math.floor(s/86400); s%=86400; var h=Math.floor(s/3600); s%=3600; var m=Math.floor(s/60); s%=60;
-      document.getElementById('cd').textContent=days; document.getElementById('ch').textContent=pad(h); document.getElementById('cm').textContent=pad(m); document.getElementById('cs').textContent=pad(s); }
-    tick(); setInterval(tick,1000); })();
-  function mountImg(id,src,alt){ var box=document.getElementById(id); if(!box||!src) return; var img=new Image(); img.alt=alt||''; img.onload=function(){ var ph=box.querySelector('.ph'); if(ph) ph.remove(); box.insertBefore(img,box.firstChild); }; img.src=src; }
-    document.querySelectorAll('[data-second-text]').forEach(e=>{ if(CONFIG.secondText) e.textContent=CONFIG.secondText; });
-  document.querySelectorAll('[data-second-sub]').forEach(e=>{ if(CONFIG.secondSub) e.textContent=CONFIG.secondSub; });
-  (function(){ var v=document.getElementById('mayaPlayer'), copy=document.getElementById('mhCopy'), sound=document.getElementById('mhSound'), replay=document.getElementById('mhReplay'), wave=document.getElementById('mhWave'); if(!v) return;
-    var still=document.getElementById('mhStill'); function reveal(){ if(copy) copy.classList.add('show'); if(still) still.classList.add('show'); } function hide(){ if(copy) copy.classList.remove('show'); if(still) still.classList.remove('show'); }
-    v.addEventListener('ended',function(){ reveal(); });
-    // start the crossfade just before the last frame so there is no jump
-    v.addEventListener('timeupdate',function(){ if(v.duration && v.currentTime>v.duration-0.35 && still && !still.classList.contains('show')) still.classList.add('show'); });
-    setTimeout(function(){ if(copy && !copy.classList.contains('show')) reveal(); },12000);
-    if(wave) wave.style.opacity = v.muted ? '0.35' : '1';
-    if(sound){ sound.addEventListener('click',function(){ v.muted=!v.muted; if(wave) wave.style.opacity = v.muted ? '0.35' : '1'; if(!v.muted){ document.querySelectorAll('#mayaPlayer,#mayaPlayer2').forEach(function(o){ if(o!==v){ o.muted=true; } }); var waves=document.querySelectorAll('#mhWave,#mhWave2'); waves.forEach(function(w2){ if(w2!==wave) w2.style.opacity='0.35'; }); v.play().catch(function(){}); } }); }
-    if(replay){ replay.addEventListener('click',function(){ hide(); try{v.currentTime=0;}catch(e){} v.play().catch(function(){}); }); }
-  })();
-  (function(){ var v=document.getElementById('mayaPlayer2'), copy=document.getElementById('mhCopy2'), sound=document.getElementById('mhSound2'), replay=document.getElementById('mhReplay2'), wave=document.getElementById('mhWave2'), still=document.getElementById('mhStill2'); if(!v) return;
-    function reveal(){ if(copy) copy.classList.add('show'); if(still) still.classList.add('show'); } function hide(){ if(copy) copy.classList.remove('show'); if(still) still.classList.remove('show'); }
-    var started=false, revealTimer=null;
-    function start(){ if(started) return; started=true; try{v.currentTime=0;}catch(e){} var p=v.play(); if(p&&p.catch) p.catch(function(){}); revealTimer=setTimeout(function(){ if(copy && !copy.classList.contains('show')) reveal(); },14000); }
-    if('IntersectionObserver' in window){
-      new IntersectionObserver(function(es){ es.forEach(function(e){
-        if(e.isIntersecting){ start(); }
-        else { // scrolled away: pause + reset so it replays fresh next time it's seen
-          if(started){ started=false; try{v.pause(); v.currentTime=0;}catch(err){} if(revealTimer)clearTimeout(revealTimer); hide(); }
-        }
-      }); },{threshold:.55}).observe(v);
-    } else { start(); }
-    v.addEventListener('ended',function(){ reveal(); });
-    v.addEventListener('timeupdate',function(){ if(v.duration && v.currentTime>v.duration-0.35 && still && !still.classList.contains('show')) still.classList.add('show'); });
-    if(wave) wave.style.opacity = v.muted ? '0.35' : '1';
-    if(sound){ sound.addEventListener('click',function(){ v.muted=!v.muted; if(wave) wave.style.opacity = v.muted ? '0.35' : '1'; if(!v.muted){ document.querySelectorAll('#mayaPlayer,#mayaPlayer2').forEach(function(o){ if(o!==v){ o.muted=true; } }); var waves=document.querySelectorAll('#mhWave,#mhWave2'); waves.forEach(function(w2){ if(w2!==wave) w2.style.opacity='0.35'; }); v.play().catch(function(){}); } }); }
-    if(replay){ replay.addEventListener('click',function(){ hide(); try{v.currentTime=0;}catch(e){} var p=v.play(); if(p&&p.catch) p.catch(function(){ v.load(); v.play().catch(function(){}); }); }); }
-  })(); 
-  if(CONFIG.metaPixelId){
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',CONFIG.metaPixelId); fbq('track','PageView');
-    var P={content_name:CONFIG.productName,content_type:'product',currency:'USD',value:parseFloat(CONFIG.price.replace(/[^0-9.]/g,''))||0};
-    var seen=false, offer=document.getElementById('buy');
-    if('IntersectionObserver' in window && offer){ new IntersectionObserver(function(es,o){es.forEach(function(e){ if(e.isIntersecting&&!seen){seen=true;fbq('track','ViewContent',P);o.disconnect();} });},{threshold:.35}).observe(offer); }
-    document.querySelectorAll('.card [data-buy]').forEach(function(a){ a.addEventListener('click',function(){ fbq('track','InitiateCheckout',P); }); });
+/* ================= CONFIG — fill in before launch ================= */
+var CONFIG = {
+  CHECKOUT: {
+    full:  'https://checkout.mailerlite.com/checkout/36263'       // $497 one-time (MailerLite)
+  },
+  DONE_FOR_YOU: '',                              // IG DM or booking link for done-for-you
+  SPOTS: { claimed: null, total: 100 },          // real sales count; null hides the meter
+  DOWNSELL: 'https://checkout.mailerlite.com/checkout/36831',   // $47 Starter (MailerLite); shows to people who back out of checkout
+  /* Ad angles: link an ad to buildwithtrend.com/ai/?for=ugc to swap the headline */
+  ANGLES: {
+    ugc:        'UGC ads on demand. <span class="g">No creators.</span>',
+    creators:   'Post every day. <span class="g">Film zero days.</span>',
+    twin:       'Make an AI twin of you <span class="g">in under an hour.</span>',
+    business:   'A spokesperson for your business <span class="g">in under an hour.</span>',
+    fashion:    'AI models that pass as real <span class="g">in under an hour.</span>',
+    realestate: 'An AI presenter for every listing <span class="g">in under an hour.</span>',
+    agency:     'Sell AI avatars to clients. <span class="g">We charge $5,000 per build.</span>'
   }
-})();
-</script>
-<script>
-/* Sample videos: silent, non-interactive, seamless loop */
-(function(){
-  document.querySelectorAll('.sample-vid').forEach(function(v){
-    v.muted=true;v.defaultMuted=true;v.volume=0;v.loop=true;v.controls=false;
-    var play=function(){var p=v.play();if(p&&p.catch)p.catch(function(){});};
-    v.addEventListener('volumechange',function(){if(!v.muted){v.muted=true;}});
-    v.addEventListener('pause',function(){if(!document.hidden)play();});
-    v.addEventListener('ended',function(){v.currentTime=0;play();});
-    v.addEventListener('contextmenu',function(e){e.preventDefault();});
-    document.addEventListener('visibilitychange',function(){if(!document.hidden)play();});
-    if(v.readyState>=2)play();else v.addEventListener('canplay',play,{once:true});
+};
+/* ================================================================== */
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* Ad angle from ?for= */
+  try {
+    var key = new URLSearchParams(location.search).get('for');
+    if (key && CONFIG.ANGLES[key]) $('h1').innerHTML = CONFIG.ANGLES[key];
+  } catch (e) {}
+
+  /* Slots */
+  document.querySelectorAll('.slot > img').forEach(function (img) {
+    var slot = img.parentNode;
+    function ok() { slot.classList.add('has-media'); }
+    function fail() { img.remove(); }
+    if (img.complete) { img.naturalWidth ? ok() : fail(); }
+    else { img.addEventListener('load', ok); img.addEventListener('error', fail); }
   });
+  function loadVideo(v) {
+    var slot = v.parentNode;
+    v.addEventListener('loadedmetadata', function () { slot.classList.add('has-media'); if (v.play) v.play().catch(function () {}); });
+    v.addEventListener('error', function () {
+      if (v.dataset.alt && v.src.indexOf(v.dataset.alt) === -1 && !v.dataset.triedAlt) { v.dataset.triedAlt = '1'; v.src = v.dataset.alt; return; }
+      if (v.poster) { var img = new Image(); img.src = v.poster; img.alt = v.getAttribute('aria-label') || ''; v.replaceWith(img); return; }
+      v.remove();
+    });
+    v.preload = 'metadata';
+    v.src = v.dataset.src;
+  }
+  var hero = $('hero-video');
+  loadVideo(hero);
+
+  /* Example clips: load only when scrolled near */
+  var lazy = document.querySelectorAll('.lazy-vid');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); loadVideo(e.target); } });
+    }, { rootMargin: '200px' });
+    lazy.forEach(function (v) { io.observe(v); });
+  } else { lazy.forEach(loadVideo); }
+  $('sound').addEventListener('click', function () {
+    hero.muted = !hero.muted; if (!hero.muted) { hero.currentTime = 0; hero.play().catch(function () {}); }
+    this.setAttribute('aria-pressed', hero.muted ? 'false' : 'true');
+    this.querySelector('span').textContent = hero.muted ? 'Tap to watch with sound' : 'Sound on';
+  });
+
+  /* Done-for-you link */
+  var dfy = $('link-dfy');
+  if (CONFIG.DONE_FOR_YOU) { dfy.href = CONFIG.DONE_FOR_YOU; dfy.target = '_blank'; dfy.rel = 'noopener'; }
+  else dfy.addEventListener('click', function (e) { e.preventDefault(); var t = dfy.textContent; dfy.textContent = 'Link goes here'; setTimeout(function () { dfy.textContent = t; }, 1400); });
+
+  /* Spots meter (real count only) */
+  var c = CONFIG.SPOTS;
+  if (typeof c.claimed === 'number' && c.claimed >= 0) {
+    $('spots').hidden = false; $('meter-label').textContent = c.claimed + ' of ' + c.total + ' claimed';
+    requestAnimationFrame(function () { $('meter-fill').style.width = Math.min(c.claimed / c.total * 100, 100) + '%'; });
+    $('sticky-sub').textContent = Math.max(c.total - c.claimed, 0) + ' launch spots left';
+  }
+
+
+  /* Payment — single one-time price ($497) */
+  var shield = '<svg width="12" height="13" viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V4l8-3z" fill="#0FA968"/></svg>';
+  var btn = $('buy-cta');
+  btn.href = CONFIG.CHECKOUT.full || '#buy';
+  $('buy-note').innerHTML = shield + 'TREND Money-Back Guarantee available*';
+  btn.addEventListener('click', function (e) {
+    if (!CONFIG.CHECKOUT.full) { e.preventDefault(); var old = btn.textContent; btn.textContent = 'Checkout link goes here'; setTimeout(function () { btn.textContent = old; }, 1400); }
+  });
+
+  /* Sticky bar: after the hero button, hidden at the price box */
+  var sticky = $('sticky'), heroVisible = true, buyVisible = false;
+  function updateSticky() { var on = !heroVisible && !buyVisible; sticky.classList.toggle('on', on); sticky.setAttribute('aria-hidden', on ? 'false' : 'true'); sticky.querySelector('a').tabIndex = on ? 0 : -1; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; updateSticky(); }).observe($('hero-cta'));
+    new IntersectionObserver(function (e) { buyVisible = e[0].isIntersecting; updateSticky(); }, { threshold: 0.15 }).observe($('buy'));
+  }
+  /* $37 downsell: shows once to people who went to Stripe checkout and came back without buying.
+     Works with Stripe Payment Links (back button) and with Checkout cancel URLs (?checkout=cancel). */
+  (function () {
+    var ds = $('ds'), cta = $('ds-cta'), shown = false;
+    function store(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+    function seenBefore() { try { return localStorage.getItem('thl_ds_seen') === '1'; } catch (e) { return false; } }
+    function markSeen() { try { localStorage.setItem('thl_ds_seen', '1'); } catch (e) {} }
+    if (CONFIG.DOWNSELL) cta.href = CONFIG.DOWNSELL;
+    else cta.addEventListener('click', function (e) { e.preventDefault(); var t = cta.textContent; cta.textContent = 'Checkout link goes here'; setTimeout(function () { cta.textContent = t; }, 1400); });
+    function close() { ds.classList.remove('on'); setTimeout(function () { ds.hidden = true; }, 220); document.documentElement.style.overflow = ''; }
+    function open() {
+      if (shown || seenBefore()) return;
+      shown = true; markSeen(); store('thl_co', '0');
+      setTimeout(function () {
+        ds.hidden = false; document.documentElement.style.overflow = 'hidden';
+        requestAnimationFrame(function () { ds.classList.add('on'); cta.focus({ preventScroll: true }); });
+      }, 600);
+    }
+    $('ds-no').addEventListener('click', close);
+    ds.addEventListener('click', function (e) { if (e.target === ds) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ds.hidden) close(); });
+    /* remember that they went to checkout */
+    $('buy-cta').addEventListener('click', function () { if (CONFIG.CHECKOUT.full) store('thl_co', '1'); });
+    /* came back: cancel URL, a fresh load, or the back button restoring the page */
+    var q = new URLSearchParams(location.search);
+    if (q.get('checkout') === 'cancel') {
+      try { q.delete('checkout'); history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash); } catch (e) {}
+      open();
+    } else if (store('thl_co') === '1') open();
+    window.addEventListener('pageshow', function (e) { if (e.persisted && store('thl_co') === '1') open(); });
+  })();
 })();
 </script>
-<script>
-/* Load sample videos only when they come near the screen */
-(function(){var vs=[].slice.call(document.querySelectorAll('video.sample-vid[data-src]'));
-function load(v){if(v.dataset.loaded)return;v.dataset.loaded=1;v.src=v.dataset.src;v.preload='auto';v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load(e.target);io.unobserve(e.target);}});},{rootMargin:'400px 0px'});vs.forEach(function(v){io.observe(v);});}else{vs.forEach(load);}})();
 
-(function(){var f=document.getElementById('nlForm');if(!f)return;
-f.addEventListener('submit',function(ev){ev.preventDefault();
-var email=f.querySelector('input[type=email]');if(!email||!email.value)return;
-var body=new URLSearchParams();body.append('fields[email]',email.value);body.append('ml-submit','1');body.append('anticsrf','true');
-fetch(f.action,{method:'POST',body:body,headers:{'Content-Type':'application/x-www-form-urlencoded'}}).catch(function(){}).finally(function(){
-f.style.display='none';var d=document.getElementById('nlDone');if(d)d.style.display='block';});
-});})();
-</script>
-
-<script>(function(){try{if(window.matchMedia&&window.matchMedia("(max-width:833px)").matches){var t=document.getElementById('getbox');if(t){document.querySelectorAll('a[data-buy][href="#buy"]').forEach(function(a){a.setAttribute('href','javascript:void(0)');a.addEventListener('click',function(ev){ev.preventDefault();var y=t.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'});});});}}}catch(e){}})();
-// strip any leftover #getbox / #buy hash on load so refresh never jumps
-if(location.hash){try{history.replaceState(null,'',location.pathname+location.search);window.scrollTo(0,0);}catch(e){}}</script>
-<script>(function(){try{if(window.matchMedia&&window.matchMedia("(max-width:833px)").matches){var v=document.getElementById("mayaPlayer");if(v){var src=v.querySelector("source");if(src){src.setAttribute("src","media/hero_vertical.mp4");} v.setAttribute("poster","media/hero_vertical_poster.jpg"); v.load();}}}catch(e){}})();</script>
 </body>
 </html>
