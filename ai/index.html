@@ -259,7 +259,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
     <div class="row1"><span>Launch price <s>$1,499</s> <em>$497</em></span><span>first 100 buyers</span></div>
     <div id="spots" hidden><div class="meter" aria-hidden="true"><i id="meter-fill"></i></div><div class="meter-label" id="meter-label"></div></div>
   </div>
-  <div class="logo"><span class="wordmark">TREND<span>/</span></span><small>The Human Layer</small></div>
+  <div class="logo"><a href="https://buildwithtrend.com" aria-label="TREND home" style="color:inherit;text-decoration:none;"><span class="wordmark">TREND<span>/</span></span></a><small>The Human Layer</small></div>
 
   <!-- 1. THE PROMISE -->
   <section class="hero wrap" id="top">
@@ -381,6 +381,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
   <section class="sec wrap" id="work-with-us">
     <style>
       #work-with-us .lead-form { display:grid; gap:10px; margin-top:20px; }
+      #work-with-us .lead-form[hidden], #work-with-us .lead-done[hidden] { display:none; }
       #work-with-us input, #work-with-us textarea { width:100%; box-sizing:border-box; font-family:var(--body); font-size:16px; color:var(--ink); background:var(--paper); border:1.5px solid var(--line); border-radius:12px; padding:14px; -webkit-appearance:none; }
       #work-with-us textarea { resize:vertical; min-height:92px; }
       #work-with-us input:focus, #work-with-us textarea:focus { outline:none; border-color:var(--green); }
@@ -410,8 +411,8 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
   </section>
 
   <footer id="terms">
-    <span class="wordmark">TREND<span>/</span></span>
-    <nav><a href="https://buildwithtrend.com/terms">Terms</a><a href="https://buildwithtrend.com/privacy">Privacy</a><a href="https://buildwithtrend.com/refunds">Refund policy</a><span>hello@buildwithtrend.com</span></nav>
+    <a href="https://buildwithtrend.com" aria-label="TREND home" style="color:inherit;text-decoration:none;"><span class="wordmark">TREND<span>/</span></span></a>
+    <nav><a href="https://buildwithtrend.com">buildwithtrend.com</a><a href="https://buildwithtrend.com/terms">Terms</a><a href="https://buildwithtrend.com/privacy">Privacy</a><a href="https://buildwithtrend.com/refunds">Refund policy</a><span>hello@buildwithtrend.com</span></nav>
     <p class="terms"><b>* TREND Money-Back Guarantee terms.</b> The guarantee is an option you agree to at checkout, and it applies to the $497 purchase only; the $47 Starter is not eligible. By agreeing to it, you get 30 days from purchase to use the system. If you can't make your avatar or it isn't working, email <b>hello@buildwithtrend.com</b> within those 30 days. We'll reach out to schedule a Zoom call, troubleshoot it with you and help fix it. If we find it doesn't work because of an error in our system or something we failed to deliver, we'll refund your purchase in full. Refunds aren't available for results that depend on third-party tools, subscriptions or credits you choose, or for steps that weren't followed.</p>
     <p class="terms">The video at the top is Christian, filmed for real. Everyone in the examples is an AI avatar. Videos and timings shown are our results; yours depend on your effort and the tools you use. Not affiliated with Anthropic, Higgsfield or ElevenLabs. © 2026 TREND.</p>
   </footer>
@@ -598,7 +599,7 @@ var CONFIG = {
       })
     }).then(function (r) { return r.json().catch(function () { return { success: false }; }); })
       .then(function (data) {
-        if (data && data.success) { f.hidden = true; done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        if (data && data.success) { try { f.reset(); } catch (e) {} btn.disabled = false; btn.textContent = label; f.hidden = true; done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
         else { btn.disabled = false; btn.textContent = label; note.className = 'lf-note err'; note.textContent = 'Something went wrong. Try again, or email hello@buildwithtrend.com.'; }
       }).catch(function () {
         btn.disabled = false; btn.textContent = label; note.className = 'lf-note err'; note.textContent = 'Network issue — please try again, or email hello@buildwithtrend.com.';
