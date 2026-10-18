@@ -69,15 +69,19 @@ h2.d { font-size: clamp(40px, 11vw, 50px); }
 .dark .copy b { color: #fff; }
 
 /* banner + logo */
-.banner { background: var(--ink); color: #fff; padding: 9px 14px 10px; }
+.banner { background: var(--ink); color: #fff; padding: 9px 14px 10px; position: sticky; top: 0; z-index: 60; }
 .banner .row1 { display: flex; justify-content: space-between; gap: 10px; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
 .banner s { opacity: .5; } .banner em { font-style: normal; color: var(--green-hi); }
+.banner-cta { background: var(--green); color: #fff; text-decoration: none; padding: 2px 10px; border-radius: 100px; white-space: nowrap; line-height: 1; }
+.banner-cta:hover { background: var(--green-ink); }
 .meter { margin-top: 7px; height: 5px; border-radius: 5px; background: rgba(255,255,255,.18); overflow: hidden; }
 .meter i { display: block; height: 100%; width: 0; background: var(--green); transition: width .8s ease; }
 .meter-label { font-family: var(--mono); font-size: 10.5px; color: rgba(255,255,255,.7); margin-top: 5px; }
 .logo { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 4px; text-decoration: none; }
 .wordmark { font-family: var(--display); font-size: 28px; line-height: 1; transform: skewX(-8deg); display: inline-block; letter-spacing: .02em; }
 .wordmark span { color: var(--green); margin-left: 2px; }
+.logo-img { height: 30px; width: auto; display: inline-block; vertical-align: middle; }
+footer .logo-img { height: 22px; }
 .logo small { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
 
 /* buttons */
@@ -263,7 +267,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
   .page { max-width: none !important; border-radius: 0 !important; box-shadow: none !important; overflow: visible !important; padding-bottom: 0; }
   .wrap, .logo, footer { padding-inline: var(--gut); }
   .banner { padding: 12px var(--gut); } .banner .row1 { justify-content: center; gap: 28px; font-size: 12.5px; }
-  .logo { padding-top: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--line); padding-bottom: 20px; } .wordmark { font-size: 36px; } .logo small { font-size: 11px; }
+  .logo { padding-top: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--line); padding-bottom: 20px; } .wordmark { font-size: 36px; } .logo small { font-size: 11px; } .logo-img { height: 42px; }
   .sec { padding-block: 100px; }
   h2.d { font-size: 76px; }
   .eyebrow { font-size: 12px; }
@@ -334,10 +338,10 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
 
 <div class="page">
   <div class="banner">
-    <div class="row1"><span>The Human Layer <s>$1,499</s> <em>Only $497</em></span><span>Instant access</span></div>
+    <div class="row1"><span>The Human Layer <s>$1,499</s> <em>Only $497</em></span><a class="banner-cta" href="#buy">Instant access &rarr;</a></div>
     <div id="spots" hidden><div class="meter" aria-hidden="true"><i id="meter-fill"></i></div><div class="meter-label" id="meter-label"></div></div>
   </div>
-  <div class="logo"><a href="https://buildwithtrend.com" aria-label="TREND home" style="color:inherit;text-decoration:none;"><span class="wordmark">TREND<span>/</span></span></a><small>The Human Layer</small></div>
+  <div class="logo"><a href="https://buildwithtrend.com" aria-label="TREND home"><img src="media/trend-logo.png" alt="TREND" class="logo-img"></a><small>The Human Layer</small></div>
 
   <!-- 1. THE PROMISE -->
   <section class="hero wrap" id="top">
@@ -358,7 +362,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
   <!-- 2. EXAMPLES -->
   <section class="sec wrap" id="examples">
     <p class="eyebrow">Every person below is AI</p>
-    <h2 class="d">Never film again. <span class="g">Still look real.</span></h2>
+    <h2 class="d">Endless videos. <span class="g">All AI.</span></h2>
     <p class="copy">Hate being on camera? Burning hours on reshoots? Paying creators hundreds for one video? Every person below is an AI avatar made with The Human Layer. <b>Build yours in under an hour and post every day without ever hitting record.</b></p>
     <div class="swipe" aria-label="Examples, swipe for more">
       <figure class="slot ex has-media"><video muted loop playsinline preload="none" poster="media/ex-02.jpg" data-src="media/ex-02.mp4" class="lazy-vid" aria-label="Product review, made with The Human Layer"></video><span class="label">Product review</span></figure>
@@ -408,7 +412,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
     <h2 class="d">Everything you need. <span class="g">Only $497.</span></h2>
 
     <div class="pricebox" id="buy">
-      <div class="top"><div><div class="was"><s>$1,499</s></div><span class="now" id="now"><small>Only</small> $497</span></div></div>
+      <div class="top"><div><div class="was"><s>$1,499</s></div><span class="now" id="now"><small>Only</small> $497</span></div><span class="tagp">Launch price</span></div>
       <ul class="inc">
         <li><span><b>Your character reference sheet,</b> the exact method behind Maya</span></li>
         <li><span><b>Your perfect master headshot</b> that looks like a real photo</span></li>
@@ -478,7 +482,7 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
   </section>
 
   <footer id="terms">
-    <a href="https://buildwithtrend.com" aria-label="TREND home" style="color:inherit;text-decoration:none;"><span class="wordmark">TREND<span>/</span></span></a>
+    <a href="https://buildwithtrend.com" aria-label="TREND home"><img src="media/trend-logo.png" alt="TREND" class="logo-img"></a>
     <nav><a href="https://buildwithtrend.com">buildwithtrend.com</a><a href="https://buildwithtrend.com/terms">Terms</a><a href="https://buildwithtrend.com/privacy">Privacy</a><a href="https://buildwithtrend.com/refunds">Refund policy</a><span>hello@buildwithtrend.com</span></nav>
     <p class="terms"><b>* TREND Money-Back Guarantee terms.</b> The guarantee is an option you agree to at checkout, and it applies to the $497 purchase only; the $47 Starter is not eligible. By agreeing to it, you get 30 days from purchase to use the system. If you can't make your avatar or it isn't working, email <b>hello@buildwithtrend.com</b> within those 30 days. We'll reach out to schedule a Zoom call, troubleshoot it with you and help fix it. If we find it doesn't work because of an error in our system or something we failed to deliver, we'll refund your purchase in full. Refunds aren't available for results that depend on third-party tools, subscriptions or credits you choose, or for steps that weren't followed.</p>
     <p class="terms">The video at the top is Christian, filmed for real. Everyone in the examples is an AI avatar. Videos and timings shown are our results; yours depend on your effort and the tools you use. Not affiliated with Anthropic, Higgsfield or ElevenLabs. © 2026 TREND.</p>
