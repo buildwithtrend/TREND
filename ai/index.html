@@ -178,10 +178,10 @@ h2.d { font-size: clamp(40px, 11vw, 50px); }
 
 /* offer */
 .pricebox { margin-top: 20px; border-radius: 20px; padding: 18px 16px 16px; scroll-margin-top: 16px; background: var(--paper); color: var(--ink); }
-.pricebox .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
-.pricebox .was { font-family: var(--mono); font-size: 13px; color: var(--ink-3); }
-.pricebox .now { font-family: var(--display); font-size: 72px; line-height: .85; transform: skewX(-8deg); display: inline-block; }
-.pricebox .tagp { font-family: var(--mono); font-size: 12px; font-weight: 600; background: var(--green); color: #fff; padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
+.pricebox .top { display: block; }
+.pricebox .was { font-family: var(--mono); font-size: 13px; color: var(--ink-3); margin-top: 18px; }
+.pricebox .now { font-family: var(--display); font-size: 76px; line-height: .85; transform: skewX(-8deg); transform-origin: left; display: block; margin-top: 4px; letter-spacing: 4px; }
+.pricebox .tagp { display: inline-block; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; background: var(--green); color: #fff; padding: 8px 14px; border-radius: 100px; white-space: nowrap; box-shadow: 0 4px 16px rgba(15,169,104,.42); }
 .inc { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 7px; font-size: 15px; }
 .inc li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
 .inc li::before { content: "✓"; color: var(--green); font-weight: 700; }
@@ -339,7 +339,11 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
     <h2 class="d">Everything you need. <span class="g">$497.</span></h2>
 
     <div class="pricebox" id="buy">
-      <div class="top"><div><div class="was"><s>$1,499</s> after the first 100</div><span class="now" id="now">$497</span></div><span class="tagp">Launch price</span></div>
+      <div class="top">
+        <span class="tagp">&#9733; Launch price &middot; first 100 buyers</span>
+        <div class="was"><s>$1,499</s> after the first 100</div>
+        <span class="now" id="now">$497</span>
+      </div>
       <ul class="inc">
         <li>The step-by-step system, click by click</li>
         <li>Claude co-pilot that writes your prompts and scripts</li>
@@ -370,7 +374,39 @@ footer .terms { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; margin
       <details><summary>Do I have to label it as AI?</summary><p>Yes, and the guide shows you how. Label it, and never present an avatar as a real customer.</p></details>
       <details><summary>What if it doesn't work for me?</summary><p>Email hello@buildwithtrend.com within 30 days. We'll set up a Zoom call, troubleshoot it with you and make it right. If it doesn't work because of an error in our system or something we failed to deliver, you get your money back. One-payment purchases, terms below.</p></details>
     </div>
-    <p class="dfy">Rather have us build it for you? <a id="link-dfy" href="#">Talk to us about done-for-you</a></p>
+    <p class="dfy">Rather have us build it for you? <a id="link-dfy" href="#work-with-us">Talk to us about done-for-you</a></p>
+  </section>
+
+  <!-- 8. WORK WITH US — lead capture (Web3Forms, same as main site) -->
+  <section class="sec wrap" id="work-with-us">
+    <style>
+      #work-with-us .lead-form { display:grid; gap:10px; margin-top:20px; }
+      #work-with-us input, #work-with-us textarea { width:100%; box-sizing:border-box; font-family:var(--body); font-size:16px; color:var(--ink); background:var(--paper); border:1.5px solid var(--line); border-radius:12px; padding:14px; -webkit-appearance:none; }
+      #work-with-us textarea { resize:vertical; min-height:92px; }
+      #work-with-us input:focus, #work-with-us textarea:focus { outline:none; border-color:var(--green); }
+      #work-with-us .hp { position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0; }
+      #work-with-us .lf-note { text-align:center; font-size:13px; color:var(--ink-2); margin:6px 0 0; min-height:1.1em; }
+      #work-with-us .lf-note.err { color:var(--red); }
+      #work-with-us .lead-sub { margin:10px 0 0; color:var(--ink-2); font-size:16px; line-height:1.5; }
+      #work-with-us .lead-done { margin-top:20px; padding:24px; border-radius:16px; background:var(--green-wash); text-align:center; }
+      #work-with-us .lead-done p { margin:10px 0 0; color:var(--ink-2); }
+    </style>
+    <p class="eyebrow">Work with us</p>
+    <h2 class="d">Rather have us <span class="g">build it for you?</span></h2>
+    <p class="lead-sub">Tell us about you and what you want to make. We'll come back to you about a done-for-you build.</p>
+    <form id="leadForm" class="lead-form" novalidate>
+      <input type="text" name="name" id="lfName" placeholder="Your name" autocomplete="name" required>
+      <input type="email" name="email" id="lfEmail" placeholder="Your email" autocomplete="email" required>
+      <input type="tel" name="phone" id="lfPhone" placeholder="Phone (optional)" autocomplete="tel">
+      <textarea name="message" id="lfMsg" placeholder="What do you want to build? (optional)"></textarea>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="cta" id="lfBtn">Send it &rarr;</button>
+      <p class="lf-note" id="lfNote"></p>
+    </form>
+    <div class="lead-done" id="leadDone" hidden>
+      <h2 class="d">Got it. <span class="g">Talk soon.</span></h2>
+      <p>Thanks &mdash; we've got your info and we'll be in touch at the email you gave us.</p>
+    </div>
   </section>
 
   <footer id="terms">
@@ -405,7 +441,7 @@ var CONFIG = {
   CHECKOUT: {
     full:  'https://checkout.mailerlite.com/checkout/36263'       // $497 one-time (MailerLite)
   },
-  DONE_FOR_YOU: '',                              // IG DM or booking link for done-for-you
+  DONE_FOR_YOU: '#work-with-us',                 // scrolls to the on-page lead form (or set an external IG DM / booking link)
   SPOTS: { claimed: null, total: 100 },          // real sales count; null hides the meter
   DOWNSELL: 'https://checkout.mailerlite.com/checkout/36831',   // $47 Starter (MailerLite); shows to people who back out of checkout
   /* Ad angles: link an ad to buildwithtrend.com/ai/?for=ugc to swap the headline */
@@ -467,8 +503,12 @@ var CONFIG = {
 
   /* Done-for-you link */
   var dfy = $('link-dfy');
-  if (CONFIG.DONE_FOR_YOU) { dfy.href = CONFIG.DONE_FOR_YOU; dfy.target = '_blank'; dfy.rel = 'noopener'; }
-  else dfy.addEventListener('click', function (e) { e.preventDefault(); var t = dfy.textContent; dfy.textContent = 'Link goes here'; setTimeout(function () { dfy.textContent = t; }, 1400); });
+  if (CONFIG.DONE_FOR_YOU) {
+    dfy.href = CONFIG.DONE_FOR_YOU;
+    if (!/^#/.test(CONFIG.DONE_FOR_YOU)) { dfy.target = '_blank'; dfy.rel = 'noopener'; }
+  } else {
+    dfy.addEventListener('click', function (e) { e.preventDefault(); var t = dfy.textContent; dfy.textContent = 'Link goes here'; setTimeout(function () { dfy.textContent = t; }, 1400); });
+  }
 
   /* Spots meter (real count only) */
   var c = CONFIG.SPOTS;
@@ -526,6 +566,44 @@ var CONFIG = {
     } else if (store('thl_co') === '1') open();
     window.addEventListener('pageshow', function (e) { if (e.persisted && store('thl_co') === '1') open(); });
   })();
+})();
+</script>
+
+<script>
+/* Lead-capture form -> Web3Forms (same key as the main site) */
+(function () {
+  var f = document.getElementById('leadForm'); if (!f) return;
+  var note = document.getElementById('lfNote'), btn = document.getElementById('lfBtn'), done = document.getElementById('leadDone');
+  var g = function (id) { return document.getElementById(id); };
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    note.className = 'lf-note'; note.textContent = '';
+    var hp = f.querySelector('.hp'); if (hp && hp.checked) return;
+    var name = (g('lfName').value || '').trim();
+    var email = (g('lfEmail').value || '').trim();
+    var phone = (g('lfPhone').value || '').trim();
+    var msg = (g('lfMsg').value || '').trim();
+    if (!name) { note.className = 'lf-note err'; note.textContent = 'Please add your name.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { note.className = 'lf-note err'; note.textContent = 'Please add a valid email.'; return; }
+    var label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ff3a9cce-9a0c-4a64-9095-e0c54b104530',
+        subject: 'New TREND lead (AI page): ' + name,
+        from_name: 'TREND /ai page',
+        replyto: email,
+        name: name, email: email, phone: phone, message: msg,
+        source: 'buildwithtrend.com/ai'
+      })
+    }).then(function (r) { return r.json().catch(function () { return { success: false }; }); })
+      .then(function (data) {
+        if (data && data.success) { f.hidden = true; done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        else { btn.disabled = false; btn.textContent = label; note.className = 'lf-note err'; note.textContent = 'Something went wrong. Try again, or email hello@buildwithtrend.com.'; }
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = label; note.className = 'lf-note err'; note.textContent = 'Network issue — please try again, or email hello@buildwithtrend.com.';
+      });
+  });
 })();
 </script>
 
